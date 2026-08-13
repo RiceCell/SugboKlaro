@@ -9,8 +9,9 @@ def test_gs_parses_expected_row_count():
 
 def test_cw_none_for_period_returns_empty():
     df = parse_brcwgs_cw(FILE)
-    assert df.empty
-
+    assert not df.empty
+    assert df.iloc[0]["reference_no"] == "NONE"
+    assert "No bidded project" in df.iloc[0]["project_name"]
 
 def test_gs_catches_missing_abc():
     df = parse_brcwgs_gs(FILE)

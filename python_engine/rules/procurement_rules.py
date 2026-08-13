@@ -1,3 +1,5 @@
+# THREE: takes parsed stuff and we run the flag checks here through math / logic
+
 import pandas as pd
 from rules.base import Rule, RuleResult, RuleStatus
 
@@ -11,8 +13,12 @@ class ABCCeilingRule(Rule):
     def evaluate(self, df: pd.DataFrame) -> list[RuleResult]:
         results = []
         checkable = df[~df["doc_type"].isin(ABC_EXEMPT_DOC_TYPES)]
-
+    
         for _, row in checkable.iterrows():
+            # NEW: Skip compliant "NONE FOR THE PERIOD" placeholder rows
+            if str(row.reference_no).upper() == "NONE":
+                continue
+
             if pd.isna(row.abc) or pd.isna(row.bid_amount):
                 results.append(RuleResult(self.id, RuleStatus.MISSING_DATA,
                     "ABC or bid amount missing — cannot verify ceiling compliance",
@@ -34,6 +40,10 @@ class ZeroVarianceBiddingRule(Rule):
 
     def evaluate(self, df: pd.DataFrame) -> list[RuleResult]:
         checkable = df[~df["doc_type"].isin(ABC_EXEMPT_DOC_TYPES)].copy()
+        
+        # NEW: Skip compliant placeholder rows before doing math
+        checkable = checkable[checkable["reference_no"].astype(str).str.upper() != "NONE"]
+        
         checkable = checkable.dropna(subset=["abc", "bid_amount"])
         if checkable.empty:
             return []
@@ -56,10 +66,16 @@ class VendorConcentrationRule(Rule):
     win_threshold = 3
 
     def evaluate(self, df: pd.DataFrame) -> list[RuleResult]:
-        if df.empty:
+        # Filter out empty placeholder rows and unawarded contracts
+        valid_df = df[df["reference_no"].astype(str).str.upper() != "NONE"].copy()
+        valid_df = valid_df.dropna(subset=["winning_bidder"])
+        
+        if valid_df.empty:
             return []
-        counts = df.groupby("winning_bidder").size()
+            
+        counts = valid_df.groupby("winning_bidder").size()
         concentrated = counts[counts >= self.win_threshold]
+        
         return [
             RuleResult(self.id, RuleStatus.FLAGGED,
                 f"{vendor} won {n} contracts this quarter — an indicator worth reviewing "

@@ -1,3 +1,5 @@
+# FOUR: collects the results from the inspectors and spits out the final JSON for frontend
+
 import json
 from config import BRCWGS_FILE
 from ingest.parsers.procurement import parse_brcwgs
