@@ -1,0 +1,363 @@
+{
+  "doc_type": "BRCWGS",
+  "row_count": 26,
+  "results": [
+    {
+      "rule_id": "PROC-001",
+      "status": "pass",
+      "message": "Bid within ABC ceiling",
+      "legal_basis": {
+        "law": "RA 9184",
+        "section": "Sec. 31",
+        "title": "Ceiling for Bid Prices"
+      },
+      "row_ref": 12
+    },
+    {
+      "rule_id": "PROC-001",
+      "status": "pass",
+      "message": "Bid within ABC ceiling",
+      "legal_basis": {
+        "law": "RA 9184",
+        "section": "Sec. 31",
+        "title": "Ceiling for Bid Prices"
+      },
+      "row_ref": 61
+    },
+    {
+      "rule_id": "PROC-001",
+      "status": "pass",
+      "message": "Bid within ABC ceiling",
+      "legal_basis": {
+        "law": "RA 9184",
+        "section": "Sec. 31",
+        "title": "Ceiling for Bid Prices"
+      },
+      "row_ref": 194
+    },
+    {
+      "rule_id": "PROC-001",
+      "status": "pass",
+      "message": "Bid within ABC ceiling",
+      "legal_basis": {
+        "law": "RA 9184",
+        "section": "Sec. 31",
+        "title": "Ceiling for Bid Prices"
+      },
+      "row_ref": 166
+    },
+    {
+      "rule_id": "PROC-001",
+      "status": "pass",
+      "message": "Bid within ABC ceiling",
+      "legal_basis": {
+        "law": "RA 9184",
+        "section": "Sec. 31",
+        "title": "Ceiling for Bid Prices"
+      },
+      "row_ref": 208
+    },
+    {
+      "rule_id": "PROC-001",
+      "status": "pass",
+      "message": "Bid within ABC ceiling",
+      "legal_basis": {
+        "law": "RA 9184",
+        "section": "Sec. 31",
+        "title": "Ceiling for Bid Prices"
+      },
+      "row_ref": 292
+    },
+    {
+      "rule_id": "PROC-001",
+      "status": "pass",
+      "message": "Bid within ABC ceiling",
+      "legal_basis": {
+        "law": "RA 9184",
+        "section": "Sec. 31",
+        "title": "Ceiling for Bid Prices"
+      },
+      "row_ref": 333
+    },
+    {
+      "rule_id": "PROC-001",
+      "status": "pass",
+      "message": "Bid within ABC ceiling",
+      "legal_basis": {
+        "law": "RA 9184",
+        "section": "Sec. 31",
+        "title": "Ceiling for Bid Prices"
+      },
+      "row_ref": 334
+    },
+    {
+      "rule_id": "PROC-001",
+      "status": "pass",
+      "message": "Bid within ABC ceiling",
+      "legal_basis": {
+        "law": "RA 9184",
+        "section": "Sec. 31",
+        "title": "Ceiling for Bid Prices"
+      },
+      "row_ref": 335
+    },
+    {
+      "rule_id": "PROC-001",
+      "status": "pass",
+      "message": "Bid within ABC ceiling",
+      "legal_basis": {
+        "law": "RA 9184",
+        "section": "Sec. 31",
+        "title": "Ceiling for Bid Prices"
+      },
+      "row_ref": 336
+    },
+    {
+      "rule_id": "PROC-001",
+      "status": "pass",
+      "message": "Bid within ABC ceiling",
+      "legal_basis": {
+        "law": "RA 9184",
+        "section": "Sec. 31",
+        "title": "Ceiling for Bid Prices"
+      },
+      "row_ref": 356
+    },
+    {
+      "rule_id": "PROC-001",
+      "status": "pass",
+      "message": "Bid within ABC ceiling",
+      "legal_basis": {
+        "law": "RA 9184",
+        "section": "Sec. 31",
+        "title": "Ceiling for Bid Prices"
+      },
+      "row_ref": 441
+    },
+    {
+      "rule_id": "PROC-001",
+      "status": "pass",
+      "message": "Bid within ABC ceiling",
+      "legal_basis": {
+        "law": "RA 9184",
+        "section": "Sec. 31",
+        "title": "Ceiling for Bid Prices"
+      },
+      "row_ref": 564
+    },
+    {
+      "rule_id": "PROC-001",
+      "status": "pass",
+      "message": "Bid within ABC ceiling",
+      "legal_basis": {
+        "law": "RA 9184",
+        "section": "Sec. 31",
+        "title": "Ceiling for Bid Prices"
+      },
+      "row_ref": 624
+    },
+    {
+      "rule_id": "PROC-001",
+      "status": "missing_data",
+      "message": "ABC or bid amount missing — cannot verify ceiling compliance",
+      "legal_basis": {
+        "law": "RA 9184",
+        "section": "Sec. 31",
+        "title": "Ceiling for Bid Prices"
+      },
+      "row_ref": 625
+    },
+    {
+      "rule_id": "PROC-001",
+      "status": "pass",
+      "message": "Bid within ABC ceiling",
+      "legal_basis": {
+        "law": "RA 9184",
+        "section": "Sec. 31",
+        "title": "Ceiling for Bid Prices"
+      },
+      "row_ref": 923
+    },
+    {
+      "rule_id": "PROC-001",
+      "status": "pass",
+      "message": "Bid within ABC ceiling",
+      "legal_basis": {
+        "law": "RA 9184",
+        "section": "Sec. 31",
+        "title": "Ceiling for Bid Prices"
+      },
+      "row_ref": 1436
+    },
+    {
+      "rule_id": "PROC-001",
+      "status": "pass",
+      "message": "Bid within ABC ceiling",
+      "legal_basis": {
+        "law": "RA 9184",
+        "section": "Sec. 31",
+        "title": "Ceiling for Bid Prices"
+      },
+      "row_ref": 804
+    },
+    {
+      "rule_id": "PROC-001",
+      "status": "pass",
+      "message": "Bid within ABC ceiling",
+      "legal_basis": {
+        "law": "RA 9184",
+        "section": "Sec. 31",
+        "title": "Ceiling for Bid Prices"
+      },
+      "row_ref": 698
+    },
+    {
+      "rule_id": "PROC-001",
+      "status": "pass",
+      "message": "Bid within ABC ceiling",
+      "legal_basis": {
+        "law": "RA 9184",
+        "section": "Sec. 31",
+        "title": "Ceiling for Bid Prices"
+      },
+      "row_ref": 761
+    },
+    {
+      "rule_id": "PROC-001",
+      "status": "pass",
+      "message": "Bid within ABC ceiling",
+      "legal_basis": {
+        "law": "RA 9184",
+        "section": "Sec. 31",
+        "title": "Ceiling for Bid Prices"
+      },
+      "row_ref": 762
+    },
+    {
+      "rule_id": "PROC-001",
+      "status": "pass",
+      "message": "Bid within ABC ceiling",
+      "legal_basis": {
+        "law": "RA 9184",
+        "section": "Sec. 31",
+        "title": "Ceiling for Bid Prices"
+      },
+      "row_ref": 794
+    },
+    {
+      "rule_id": "PROC-001",
+      "status": "missing_data",
+      "message": "ABC or bid amount missing — cannot verify ceiling compliance",
+      "legal_basis": {
+        "law": "RA 9184",
+        "section": "Sec. 31",
+        "title": "Ceiling for Bid Prices"
+      },
+      "row_ref": 795
+    },
+    {
+      "rule_id": "PROC-001",
+      "status": "missing_data",
+      "message": "ABC or bid amount missing — cannot verify ceiling compliance",
+      "legal_basis": {
+        "law": "RA 9184",
+        "section": "Sec. 31",
+        "title": "Ceiling for Bid Prices"
+      },
+      "row_ref": 1298
+    },
+    {
+      "rule_id": "PROC-002",
+      "status": "flagged",
+      "message": "Bid within 1% of ABC — an indicator commonly associated with reduced price competition",
+      "legal_basis": {
+        "law": "RA 9184",
+        "section": "Sec. 3",
+        "title": "Policy — Competitiveness"
+      },
+      "row_ref": 12
+    },
+    {
+      "rule_id": "PROC-002",
+      "status": "flagged",
+      "message": "Bid within 1% of ABC — an indicator commonly associated with reduced price competition",
+      "legal_basis": {
+        "law": "RA 9184",
+        "section": "Sec. 3",
+        "title": "Policy — Competitiveness"
+      },
+      "row_ref": 208
+    },
+    {
+      "rule_id": "PROC-002",
+      "status": "flagged",
+      "message": "Bid within 1% of ABC — an indicator commonly associated with reduced price competition",
+      "legal_basis": {
+        "law": "RA 9184",
+        "section": "Sec. 3",
+        "title": "Policy — Competitiveness"
+      },
+      "row_ref": 292
+    },
+    {
+      "rule_id": "PROC-002",
+      "status": "flagged",
+      "message": "Bid within 1% of ABC — an indicator commonly associated with reduced price competition",
+      "legal_basis": {
+        "law": "RA 9184",
+        "section": "Sec. 3",
+        "title": "Policy — Competitiveness"
+      },
+      "row_ref": 333
+    },
+    {
+      "rule_id": "PROC-002",
+      "status": "flagged",
+      "message": "Bid within 1% of ABC — an indicator commonly associated with reduced price competition",
+      "legal_basis": {
+        "law": "RA 9184",
+        "section": "Sec. 3",
+        "title": "Policy — Competitiveness"
+      },
+      "row_ref": 334
+    },
+    {
+      "rule_id": "PROC-002",
+      "status": "flagged",
+      "message": "Bid within 1% of ABC — an indicator commonly associated with reduced price competition",
+      "legal_basis": {
+        "law": "RA 9184",
+        "section": "Sec. 3",
+        "title": "Policy — Competitiveness"
+      },
+      "row_ref": 335
+    },
+    {
+      "rule_id": "PROC-002",
+      "status": "flagged",
+      "message": "Bid within 1% of ABC — an indicator commonly associated with reduced price competition",
+      "legal_basis": {
+        "law": "RA 9184",
+        "section": "Sec. 3",
+        "title": "Policy — Competitiveness"
+      },
+      "row_ref": 564
+    },
+    {
+      "rule_id": "PROC-002",
+      "status": "flagged",
+      "message": "Bid within 1% of ABC — an indicator commonly associated with reduced price competition",
+      "legal_basis": {
+        "law": "RA 9184",
+        "section": "Sec. 3",
+        "title": "Policy — Competitiveness"
+      },
+      "row_ref": 698
+    }
+  ],
+  "summary": {
+    "pass": 21,
+    "flagged": 8,
+    "missing_data": 3
+  }
+}
