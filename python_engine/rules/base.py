@@ -1,4 +1,4 @@
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 from enum import Enum
 
 
@@ -15,6 +15,7 @@ class RuleResult:
     message: str
     legal_basis: dict
     row_ref: str | None = None
+    details: dict = field(default_factory=dict)
 
     def to_dict(self):
         return {
@@ -23,6 +24,7 @@ class RuleResult:
             "message": self.message,
             "legal_basis": self.legal_basis,
             "row_ref": self.row_ref,
+            "details": self.details,
         }
 
 
