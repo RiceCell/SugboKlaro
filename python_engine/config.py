@@ -6,3 +6,4 @@ DATA_DIR = REPO_ROOT / "data"
 BRCWGS_FILE = str(DATA_DIR / "raw_2026_excel" / "brcwgs_2026.xlsx")
 UCA_FILE = str(DATA_DIR / "raw_2026_excel" / "uca_2026.xlsx")
 QSCF_FILE = str(DATA_DIR / "raw_2026_excel" / "qscf_2026.xlsx")
+CHATBOT_SOURCES_FILE = str(DATA_DIR / "chatbot_sources.json")
