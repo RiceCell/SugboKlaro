@@ -1,7 +1,7 @@
 # python_engine/precompute.py
 import json
 from pathlib import Path
-from config import BRCWGS_FILE, UCA_FILE, REPO_ROOT
+from config import BRCWGS_FILE, UCA_FILE, QSCF_FILE, REPO_ROOT
 from engine import run_check
 
 OUTPUT_DIR = REPO_ROOT / "data" / "compliance_results"
@@ -12,6 +12,7 @@ def precompute_all():
     jobs = [
         ("BRCWGS", BRCWGS_FILE),
         ("UCA", UCA_FILE),
+        ("QSCF", QSCF_FILE),
     ]
 
     for doc_type, filepath in jobs:

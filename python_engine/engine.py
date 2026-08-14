@@ -1,15 +1,19 @@
 # FOUR: collects the results from the inspectors and spits out the final JSON for frontend
 
 import json
-from config import BRCWGS_FILE, UCA_FILE
+from config import BRCWGS_FILE, UCA_FILE, QSCF_FILE
 from ingest.parsers.procurement import parse_brcwgs
 from ingest.parsers.special_funds import parse_uca
+from ingest.parsers.budget import parse_qscf
 from rules.procurement_rules import PROCUREMENT_RULES
 from rules.special_funds_rules import UCA_RULES
+from rules.budget_rules import BUDGET_RULES
+
 
 RULESETS = {
     "BRCWGS": (parse_brcwgs, PROCUREMENT_RULES),
     "UCA": (parse_uca, UCA_RULES),
+    "QSCF": (parse_qscf, BUDGET_RULES),
 }
 
 
