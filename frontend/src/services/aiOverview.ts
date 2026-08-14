@@ -4,7 +4,7 @@ import brcwgsResults from "../../../data/compliance_results/brcwgs.json";
 
 export async function generateProjectOverview(projectRef: string): Promise<void> {
   const model = genAI.getGenerativeModel({
-    model: "gemini-3.5-flash",
+    model: "gemini-3.5-flash-lite",
     systemInstruction: `
       You are the SugboKlaro AI Overview generator.
       Create a short, formal, and concise overview explaining why a project passed or failed compliance checks.
