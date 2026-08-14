@@ -11,7 +11,13 @@
         "section": "Sec. 31",
         "title": "Ceiling for Bid Prices"
       },
-      "row_ref": 12
+      "row_ref": 12,
+      "details": {
+        "project_name": "Procurement of Food Packed Meals & Other Items",
+        "abc": 3007050.0,
+        "bid_amount": 3007050.0,
+        "winning_bidder": "Hotel Fortuna"
+      }
     },
     {
       "rule_id": "PROC-001",
@@ -22,7 +28,13 @@
         "section": "Sec. 31",
         "title": "Ceiling for Bid Prices"
       },
-      "row_ref": 61
+      "row_ref": 61,
+      "details": {
+        "project_name": "Procurement of 1 Lot Collapsible Van",
+        "abc": 500000.0,
+        "bid_amount": 346625.0,
+        "winning_bidder": "Weld Powertools"
+      }
     },
     {
       "rule_id": "PROC-001",
@@ -33,7 +45,13 @@
         "section": "Sec. 31",
         "title": "Ceiling for Bid Prices"
       },
-      "row_ref": 194
+      "row_ref": 194,
+      "details": {
+        "project_name": "Procurement of 36,600 tons Solid Waste Collection & Transport Services (EPA)",
+        "abc": 75688800.0,
+        "bid_amount": 65880000.0,
+        "winning_bidder": "Pinoy Basureo Corporation"
+      }
     },
     {
       "rule_id": "PROC-001",
@@ -44,7 +62,13 @@
         "section": "Sec. 31",
         "title": "Ceiling for Bid Prices"
       },
-      "row_ref": 166
+      "row_ref": 166,
+      "details": {
+        "project_name": "Procurement of Hazardous Hospital Waste",
+        "abc": 8424950.0,
+        "bid_amount": 4085690.0,
+        "winning_bidder": "HCML Logistics Services"
+      }
     },
     {
       "rule_id": "PROC-001",
@@ -55,7 +79,13 @@
         "section": "Sec. 31",
         "title": "Ceiling for Bid Prices"
       },
-      "row_ref": 208
+      "row_ref": 208,
+      "details": {
+        "project_name": "Procurement of Movable Air Cooler w/ remote controller",
+        "abc": 4300000.0,
+        "bid_amount": 4298000.0,
+        "winning_bidder": "United Automart"
+      }
     },
     {
       "rule_id": "PROC-001",
@@ -66,7 +96,13 @@
         "section": "Sec. 31",
         "title": "Ceiling for Bid Prices"
       },
-      "row_ref": 292
+      "row_ref": 292,
+      "details": {
+        "project_name": "Procurement of 50,000 sq. ft. Tarpaulin, et al",
+        "abc": 1873000.0,
+        "bid_amount": 1867494.5,
+        "winning_bidder": "Crismark General Merchandise"
+      }
     },
     {
       "rule_id": "PROC-001",
@@ -77,7 +113,13 @@
         "section": "Sec. 31",
         "title": "Ceiling for Bid Prices"
       },
-      "row_ref": 333
+      "row_ref": 333,
+      "details": {
+        "project_name": "Procurement of Rental of Audio System/Intelligent System/Communication System/LED Wall System/Staging/Dome Tent System (Category 1)",
+        "abc": 350000.0,
+        "bid_amount": 350000.0,
+        "winning_bidder": "VHC Production"
+      }
     },
     {
       "rule_id": "PROC-001",
@@ -88,7 +130,13 @@
         "section": "Sec. 31",
         "title": "Ceiling for Bid Prices"
       },
-      "row_ref": 334
+      "row_ref": 334,
+      "details": {
+        "project_name": "Procurement of 1 Lot Production Rental (Catergory 2)",
+        "abc": 800000.0,
+        "bid_amount": 800000.0,
+        "winning_bidder": "VHC Production"
+      }
     },
     {
       "rule_id": "PROC-001",
@@ -99,7 +147,13 @@
         "section": "Sec. 31",
         "title": "Ceiling for Bid Prices"
       },
-      "row_ref": 335
+      "row_ref": 335,
+      "details": {
+        "project_name": "Procurement of Food Buffet and Other Item (Category 3)",
+        "abc": 361000.0,
+        "bid_amount": 361000.0,
+        "winning_bidder": "Hotel Fortuna"
+      }
     },
     {
       "rule_id": "PROC-001",
@@ -110,7 +164,13 @@
         "section": "Sec. 31",
         "title": "Ceiling for Bid Prices"
       },
-      "row_ref": 336
+      "row_ref": 336,
+      "details": {
+        "project_name": "Procurement of Food and Venue (Category 4)",
+        "abc": 1100000.0,
+        "bid_amount": 1000000.0,
+        "winning_bidder": "Waterfront Cebu City Casino Hotel Incorporated"
+      }
     },
     {
       "rule_id": "PROC-001",
@@ -121,7 +181,13 @@
         "section": "Sec. 31",
         "title": "Ceiling for Bid Prices"
       },
-      "row_ref": 356
+      "row_ref": 356,
+      "details": {
+        "project_name": "Procurement of 200 unit Table 6ft (foldable in half) and Other Items",
+        "abc": 4287000.0,
+        "bid_amount": 2735000.0,
+        "winning_bidder": "United Automart"
+      }
     },
     {
       "rule_id": "PROC-001",
@@ -132,7 +198,13 @@
         "section": "Sec. 31",
         "title": "Ceiling for Bid Prices"
       },
-      "row_ref": 441
+      "row_ref": 441,
+      "details": {
+        "project_name": "Procurement of Security Services for the Period January 1, 2026 to December 31, 2026",
+        "abc": 13835001.3,
+        "bid_amount": 9223334.4,
+        "winning_bidder": "Café Security Agency Inc."
+      }
     },
     {
       "rule_id": "PROC-001",
@@ -143,7 +215,13 @@
         "section": "Sec. 31",
         "title": "Ceiling for Bid Prices"
       },
-      "row_ref": 564
+      "row_ref": 564,
+      "details": {
+        "project_name": "Procurement of TB-LAM Antigen Detection Test Kit (Rebid)",
+        "abc": 800000.0,
+        "bid_amount": 800000.0,
+        "winning_bidder": "AO Biomed and Industrial Marketing"
+      }
     },
     {
       "rule_id": "PROC-001",
@@ -154,7 +232,13 @@
         "section": "Sec. 31",
         "title": "Ceiling for Bid Prices"
       },
-      "row_ref": 624
+      "row_ref": 624,
+      "details": {
+        "project_name": "Procurement of Collapsible Tent",
+        "abc": 4171250.0,
+        "bid_amount": 2899918.0,
+        "winning_bidder": "Crismark General Merchandise"
+      }
     },
     {
       "rule_id": "PROC-001",
@@ -165,7 +249,13 @@
         "section": "Sec. 31",
         "title": "Ceiling for Bid Prices"
       },
-      "row_ref": 625
+      "row_ref": 625,
+      "details": {
+        "project_name": "Procurement of 15 units Water Dispenser",
+        "abc": null,
+        "bid_amount": 157500.0,
+        "winning_bidder": "Inspyre Non-Specialized Wholesale Trading"
+      }
     },
     {
       "rule_id": "PROC-001",
@@ -176,7 +266,13 @@
         "section": "Sec. 31",
         "title": "Ceiling for Bid Prices"
       },
-      "row_ref": 923
+      "row_ref": 923,
+      "details": {
+        "project_name": "Procurement of 1 Lot Ultimate Endpoint Secure and Security Manage and Response Detection Service",
+        "abc": 6100000.0,
+        "bid_amount": 5400000.0,
+        "winning_bidder": "Strategicsynergy Inc."
+      }
     },
     {
       "rule_id": "PROC-001",
@@ -187,7 +283,13 @@
         "section": "Sec. 31",
         "title": "Ceiling for Bid Prices"
       },
-      "row_ref": 1436
+      "row_ref": 1436,
+      "details": {
+        "project_name": "Procurement of 1 Lot Drugs and Medicines",
+        "abc": 49999994.0,
+        "bid_amount": 8763308.0,
+        "winning_bidder": "Pharmaceutica Filipina De Visayas"
+      }
     },
     {
       "rule_id": "PROC-001",
@@ -198,7 +300,13 @@
         "section": "Sec. 31",
         "title": "Ceiling for Bid Prices"
       },
-      "row_ref": 804
+      "row_ref": 804,
+      "details": {
+        "project_name": "Procurement of 1 Lot Supply, Delivery, Installation, Testing and Commissioning of Rooftop Solar PV System (with VAT Inclusice) including the design",
+        "abc": 15000000.0,
+        "bid_amount": 12480000.0,
+        "winning_bidder": "Argent Ventures Incorporated"
+      }
     },
     {
       "rule_id": "PROC-001",
@@ -209,7 +317,13 @@
         "section": "Sec. 31",
         "title": "Ceiling for Bid Prices"
       },
-      "row_ref": 698
+      "row_ref": 698,
+      "details": {
+        "project_name": "Procurement of Medals for End of School Year Rites (EOSY) 2026",
+        "abc": 4500000.0,
+        "bid_amount": 4485000.0,
+        "winning_bidder": "Ave Marre' Trading"
+      }
     },
     {
       "rule_id": "PROC-001",
@@ -220,7 +334,13 @@
         "section": "Sec. 31",
         "title": "Ceiling for Bid Prices"
       },
-      "row_ref": 761
+      "row_ref": 761,
+      "details": {
+        "project_name": "Procurement of 1 Lot Outsource Building Repair and Maintenance Services Starting April 1, 2026 to July 31, 2026",
+        "abc": 7417377.56,
+        "bid_amount": 3708716.72,
+        "winning_bidder": "Clever Master General Services"
+      }
     },
     {
       "rule_id": "PROC-001",
@@ -231,7 +351,13 @@
         "section": "Sec. 31",
         "title": "Ceiling for Bid Prices"
       },
-      "row_ref": 762
+      "row_ref": 762,
+      "details": {
+        "project_name": "Procurement of 1 Lot Outsource Maintenance Services for the Period of Eight (8) months from April 1, 2026 to November 30, 2026, at Equipment Repair Maintenance Management (ERMM) - Skilled and Laborer",
+        "abc": 8292539.28,
+        "bid_amount": 6214162.86,
+        "winning_bidder": "Clever Master General Services"
+      }
     },
     {
       "rule_id": "PROC-001",
@@ -242,7 +368,13 @@
         "section": "Sec. 31",
         "title": "Ceiling for Bid Prices"
       },
-      "row_ref": 794
+      "row_ref": 794,
+      "details": {
+        "project_name": "Procurement of Office Supplies",
+        "abc": 5000000.0,
+        "bid_amount": 2742170.0,
+        "winning_bidder": "Cebu Star Sales Marketing"
+      }
     },
     {
       "rule_id": "PROC-001",
@@ -253,7 +385,13 @@
         "section": "Sec. 31",
         "title": "Ceiling for Bid Prices"
       },
-      "row_ref": 795
+      "row_ref": 795,
+      "details": {
+        "project_name": "Procurement of Printing Services",
+        "abc": null,
+        "bid_amount": 398000.0,
+        "winning_bidder": "F.F. Sibi Enterprises Incorporated"
+      }
     },
     {
       "rule_id": "PROC-001",
@@ -264,95 +402,149 @@
         "section": "Sec. 31",
         "title": "Ceiling for Bid Prices"
       },
-      "row_ref": 1298
+      "row_ref": 1298,
+      "details": {
+        "project_name": "Procurement of Toners & Cartridges",
+        "abc": null,
+        "bid_amount": 1244796.0,
+        "winning_bidder": "SO Photo Print Trading"
+      }
     },
     {
       "rule_id": "PROC-002",
       "status": "flagged",
-      "message": "Bid within 1% of ABC — an indicator commonly associated with reduced price competition",
+      "message": "Bid ₱3,007,050.00 is within 1% of ABC ₱3,007,050.00 — an indicator commonly associated with reduced price competition",
       "legal_basis": {
         "law": "RA 9184",
         "section": "Sec. 3",
         "title": "Policy — Competitiveness"
       },
-      "row_ref": 12
+      "row_ref": 12,
+      "details": {
+        "project_name": "Procurement of Food Packed Meals & Other Items",
+        "abc": 3007050.0,
+        "bid_amount": 3007050.0,
+        "winning_bidder": "Hotel Fortuna"
+      }
     },
     {
       "rule_id": "PROC-002",
       "status": "flagged",
-      "message": "Bid within 1% of ABC — an indicator commonly associated with reduced price competition",
+      "message": "Bid ₱4,298,000.00 is within 1% of ABC ₱4,300,000.00 — an indicator commonly associated with reduced price competition",
       "legal_basis": {
         "law": "RA 9184",
         "section": "Sec. 3",
         "title": "Policy — Competitiveness"
       },
-      "row_ref": 208
+      "row_ref": 208,
+      "details": {
+        "project_name": "Procurement of Movable Air Cooler w/ remote controller",
+        "abc": 4300000.0,
+        "bid_amount": 4298000.0,
+        "winning_bidder": "United Automart"
+      }
     },
     {
       "rule_id": "PROC-002",
       "status": "flagged",
-      "message": "Bid within 1% of ABC — an indicator commonly associated with reduced price competition",
+      "message": "Bid ₱1,867,494.50 is within 1% of ABC ₱1,873,000.00 — an indicator commonly associated with reduced price competition",
       "legal_basis": {
         "law": "RA 9184",
         "section": "Sec. 3",
         "title": "Policy — Competitiveness"
       },
-      "row_ref": 292
+      "row_ref": 292,
+      "details": {
+        "project_name": "Procurement of 50,000 sq. ft. Tarpaulin, et al",
+        "abc": 1873000.0,
+        "bid_amount": 1867494.5,
+        "winning_bidder": "Crismark General Merchandise"
+      }
     },
     {
       "rule_id": "PROC-002",
       "status": "flagged",
-      "message": "Bid within 1% of ABC — an indicator commonly associated with reduced price competition",
+      "message": "Bid ₱350,000.00 is within 1% of ABC ₱350,000.00 — an indicator commonly associated with reduced price competition",
       "legal_basis": {
         "law": "RA 9184",
         "section": "Sec. 3",
         "title": "Policy — Competitiveness"
       },
-      "row_ref": 333
+      "row_ref": 333,
+      "details": {
+        "project_name": "Procurement of Rental of Audio System/Intelligent System/Communication System/LED Wall System/Staging/Dome Tent System (Category 1)",
+        "abc": 350000.0,
+        "bid_amount": 350000.0,
+        "winning_bidder": "VHC Production"
+      }
     },
     {
       "rule_id": "PROC-002",
       "status": "flagged",
-      "message": "Bid within 1% of ABC — an indicator commonly associated with reduced price competition",
+      "message": "Bid ₱800,000.00 is within 1% of ABC ₱800,000.00 — an indicator commonly associated with reduced price competition",
       "legal_basis": {
         "law": "RA 9184",
         "section": "Sec. 3",
         "title": "Policy — Competitiveness"
       },
-      "row_ref": 334
+      "row_ref": 334,
+      "details": {
+        "project_name": "Procurement of 1 Lot Production Rental (Catergory 2)",
+        "abc": 800000.0,
+        "bid_amount": 800000.0,
+        "winning_bidder": "VHC Production"
+      }
     },
     {
       "rule_id": "PROC-002",
       "status": "flagged",
-      "message": "Bid within 1% of ABC — an indicator commonly associated with reduced price competition",
+      "message": "Bid ₱361,000.00 is within 1% of ABC ₱361,000.00 — an indicator commonly associated with reduced price competition",
       "legal_basis": {
         "law": "RA 9184",
         "section": "Sec. 3",
         "title": "Policy — Competitiveness"
       },
-      "row_ref": 335
+      "row_ref": 335,
+      "details": {
+        "project_name": "Procurement of Food Buffet and Other Item (Category 3)",
+        "abc": 361000.0,
+        "bid_amount": 361000.0,
+        "winning_bidder": "Hotel Fortuna"
+      }
     },
     {
       "rule_id": "PROC-002",
       "status": "flagged",
-      "message": "Bid within 1% of ABC — an indicator commonly associated with reduced price competition",
+      "message": "Bid ₱800,000.00 is within 1% of ABC ₱800,000.00 — an indicator commonly associated with reduced price competition",
       "legal_basis": {
         "law": "RA 9184",
         "section": "Sec. 3",
         "title": "Policy — Competitiveness"
       },
-      "row_ref": 564
+      "row_ref": 564,
+      "details": {
+        "project_name": "Procurement of TB-LAM Antigen Detection Test Kit (Rebid)",
+        "abc": 800000.0,
+        "bid_amount": 800000.0,
+        "winning_bidder": "AO Biomed and Industrial Marketing"
+      }
     },
     {
       "rule_id": "PROC-002",
       "status": "flagged",
-      "message": "Bid within 1% of ABC — an indicator commonly associated with reduced price competition",
+      "message": "Bid ₱4,485,000.00 is within 1% of ABC ₱4,500,000.00 — an indicator commonly associated with reduced price competition",
       "legal_basis": {
         "law": "RA 9184",
         "section": "Sec. 3",
         "title": "Policy — Competitiveness"
       },
-      "row_ref": 698
+      "row_ref": 698,
+      "details": {
+        "project_name": "Procurement of Medals for End of School Year Rites (EOSY) 2026",
+        "abc": 4500000.0,
+        "bid_amount": 4485000.0,
+        "winning_bidder": "Ave Marre' Trading"
+      }
     }
   ],
   "summary": {
