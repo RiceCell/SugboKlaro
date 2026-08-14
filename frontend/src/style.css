@@ -2,14 +2,14 @@
 
 @theme {
   /* Custom pallete */
-  --cyan-gr-start: #5DE6FF;
-  --cyan-gr-end: #00D8FF;
-  --dark-blue-gr-start: #040420;
-  --dark-blue-gr-end: #010112;
-  --red-gr-start: #FF0000;
-  --red-gr-end: #D91616;
-  --yellow-gr-start: #FFF01F;
-  --yellow-gr-end: #E6D91D;
+  --color-cyan-gr-start: #5DE6FF;
+  --color-cyan-gr-end: #00D8FF;
+  --color-dark-blue-gr-start: #040420;
+  --color-dark-blue-gr-end: #010112;
+  --color-red-gr-start: #FF0000;
+  --color-red-gr-end: #D91616;
+  --color-yellow-gr-start: #FFF01F;
+  --color-yellow-gr-end: #E6D91D;
 }
 
 :root {
