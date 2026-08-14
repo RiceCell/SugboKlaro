@@ -24,5 +24,4 @@ const sample = ref({
 
 <template>
     <ReportDetails :data="sample" />
-    <HelloWorld />
 </template>

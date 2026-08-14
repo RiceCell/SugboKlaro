@@ -1,5 +1,5 @@
 <template>
-  <div class="absolute z-10 bg-linear-to-b from-[#020116] to-black border border-slate-200 rounded-lg shadow-md font-sans overflow-hidden">
+  <div class="absolute z-10 bg-linear-to-b from-dark-blue-gr-start to-dark-blue-gr-end border border-slate-200 rounded-lg shadow-md font-sans overflow-hidden">
     
     <div class="flex justify-between items-center px-5 py-4 border-b border-slate-200">
       <h3 class="m-0 text-lg text-white font-semibold">{{ data.rule_id }}</h3>
