@@ -4,4 +4,3 @@ __pycache__/
 node_modules/
 .env
 .env.*
-data/compliance_results/*.json
