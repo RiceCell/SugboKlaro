@@ -5,7 +5,7 @@ import './style.css'
 import { generateProjectOverview } from './services/aiOverview'
 
 const app = createApp(App)
-generateProjectOverview("PROC-002");
+generateProjectOverview("12");
 
 app.use(router)
 app.mount('#app')
