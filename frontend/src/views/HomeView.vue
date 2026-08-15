@@ -22,7 +22,6 @@ const sample = ref({
 });
 
 import Chatbot from '../components/Chatbot.vue';
-import HelloWorld from '../components/HelloWorld.vue';
 </script>
 
 <template>
