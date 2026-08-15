@@ -60,7 +60,7 @@ const isTyping = ref(false)
 const chatBox = ref(null)
 
 const messages = ref([
-  { role: 'bot', content: 'blabla' }
+  { role: 'bot', content: 'blabla' },
 ])
 
 

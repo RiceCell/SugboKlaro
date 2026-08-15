@@ -1,6 +1,6 @@
 import { genAI } from "./geminiClient";
-import chatbotSources from "../../../data/chatbot_sources.json";
-import brcwgsResults from "../../../data/compliance_results/brcwgs.json";
+import chatbotSources from "../../data/chatbot_sources.json";
+import brcwgsResults from "../../data/compliance_results/brcwgs.json";
 
 export async function generateProjectOverview(projectRef: string): Promise<void> {
   const model = genAI.getGenerativeModel({
