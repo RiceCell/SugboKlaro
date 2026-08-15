@@ -20,8 +20,12 @@ const sample = ref({
     "winning_bidder": "SO Photo Print Trading"
   }
 });
+
+import Chatbot from '../components/Chatbot.vue';
+import HelloWorld from '../components/HelloWorld.vue';
 </script>
 
 <template>
     <ReportDetails :data="sample" />
+    <Chatbot />
 </template>
