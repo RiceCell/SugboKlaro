@@ -127,6 +127,8 @@
 <script setup lang="ts">
 import { ref, nextTick } from 'vue'
 import { X, Send, MessageCircleMore} from '@lucide/vue';
+import { chatbotKnowledgebase, type Message } from '../services/chatbot';
+
 
 const isOpen = ref(false)
 const newMessage = ref('')
@@ -135,7 +137,7 @@ const chatBox = ref(null)
 
 const messages = ref([
   {
-    role: 'bot', content: "Hi! 👋 I'm omai. How can I help you today?"
+    role: 'bot', content: "Hi! How can I help you today?"
   }
 ])
 
@@ -161,15 +163,15 @@ const sendMessage = async () => {
 
   await scrollToBottom()
 
+  const botReply = await chatbotKnowledgebase(text);
 
-
-  setTimeout(() => {
-    isTyping.value = false
-  })
+  messages.value.push({ role: 'bot', text: botReply })
+  isTyping.value = false
+  await scrollToBottom()
 }
 
 
-const sendQuickMessage = (message) => {
+const sendQuickMessage = (message: string) => {
   newMessage.value = message
   sendMessage()
 }
