@@ -1,5 +1,5 @@
 <template>
-    <section class="absolute z-50 w-full h-20 bg-linear-to-b from-slate-800 to-slate-900 flex items-center px-5 shadow-md gap-12">
+    <section class="sticky w-full h-20 bg-linear-to-b from-slate-800 to-slate-900 flex items-center px-5 shadow-md gap-12">
         <RouterLink to="/home" class="h-full flex items-center">
             <img :src="logo" class="h-[80%]">
         </RouterLink>

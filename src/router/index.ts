@@ -8,6 +8,7 @@ const routes: RouteRecordRaw[] = [
     path: '/',
     name: 'landing',
     component: Landing,
+    meta: { hideNavbar: true }
   },
   {
     path: '/home',
