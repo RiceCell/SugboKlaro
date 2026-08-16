@@ -68,9 +68,9 @@ import { ref, onMounted, onUnmounted } from 'vue';
 import ReportDetails from '../components/ReportDetails.vue';
 
 // Import the datasets 
-import brcwgsData from '../data/compliance_results/brcwgs.json';
-import qscfData from '../data/compliance_results/qscf.json';
-import ucaData from '../data/compliance_results/uca.json';
+import brcwgsData from '../../data/compliance_results/brcwgs_2026_q1.json';
+import qscfData from '../../data/compliance_results/qscf_2026_q1.json';
+import ucaData from '../../data/compliance_results/uca_2026_q1.json';
 
 // Extract 6 sample items (2 from each JSON) and inject the root doc_type[cite: 13]
 const sampleCards = [

@@ -16,9 +16,9 @@
     <div v-else-if="reportData" class="w-full p-5">
         
         <section class="grid grid-cols-4 gap-8 px-5">
-            <button @click="openReport(r, index as number)" 
-                v-for="(r, index) in reportData.results" 
-                class="p-2 pt-6 flex flex-col items-center gap-3 rounded-2xl transition-colors group hover:bg-slate-800">
+            <button @click="openReport(r)" 
+                v-for="r in reportData.results"
+                class="p-2 pt-6 flex flex-col items-center gap-3 rounded-2xl transition-colors group hover:bg-slate-800 cursor-pointer">
                 <img :src="folderColor(r.status)" class="w-1/2 transition-all group-hover:scale-110 group-hover:-rotate-2" />
 
                 <h1 v-if="idType && idType[0] === 'brcwgs'" class="text-center">
@@ -91,32 +91,30 @@ watch(() => props.id, (newId) => {
   loadReport(newId)
 })
 
-// Helper to determine a unique ID. Uses row_ref if available, fallback to index.
-const getReportIdentifier = (r: any, index: number) => {
-  return r.row_ref ? String(r.row_ref) : String(index)
+const openReport = (r: any) => {
+  router.push({ query: { ...route.query, item: JSON.stringify(r) } })
 }
 
-// 1. Adds ?item=<id> to the current URL when a folder is clicked
-const openReport = (r: any, index: number) => {
-  const itemId = getReportIdentifier(r, index)
-  router.push({ query: { ...route.query, item: itemId } })
-}
-
-// 2. Removes ?item=<id> from the URL when closing the modal
 const closeReport = () => {
   const query = { ...route.query }
   delete query.item
   router.push({ query })
 }
 
-// 3. Automatically finds the report data corresponding to the URL's ?item= query
 const selectedReport = computed(() => {
-  const itemId = route.query.item
-  if (!itemId || !reportData.value?.results) return null
+  const itemQuery = route.query.item
+  if (!itemQuery) return null
 
-  // Find and return the matching result
-  return reportData.value.results.find((r: any, index: number) => {
-    return getReportIdentifier(r, index) === itemId
-  })
+  try {
+    // Vue Router can sometimes return an array if a query param appears multiple times.
+    // This ensures we always pass a string to JSON.parse()
+    const jsonString = Array.isArray(itemQuery) ? itemQuery[0] : itemQuery
+    
+    // Return the parsed JSON directly to the modal
+    return JSON.parse(jsonString as string)
+  } catch (e) {
+    console.error("Failed to parse report from query string:", e)
+    return null
+  }
 })
 </script>
