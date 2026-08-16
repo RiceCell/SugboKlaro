@@ -56,12 +56,41 @@ interface reportGroup {
     reports: reportDetails[];
 };
 
-const reportsList = ref<reportGroup[]>([{
+const reportsList = ref<reportGroup[]>([
+{
     title: 'Budget Reports',
     reports: [{
+        id: 'abr_2026_q1',
+        name: 'Annual Budget Report (ABR)',
+        LGU: 'REGION VII - CENTRAL VISAYAS, CITY OF CEBU (CAPITAL), CITY OF CEBU (Capital)',
+        posting_year: '2026',
+        posting_quarter: 1,
+        download_link: 'https://fdpp.dilg.gov.ph/fdpp/report/document-download?id=241671'
+    }, {
+        id: 'sipb_2026_q1',
+        name: 'Statement of Debt Service (SIPB)',
+        LGU: 'REGION VII - CENTRAL VISAYAS, CITY OF CEBU (CAPITAL), CITY OF CEBU (Capital)',
+        posting_year: '2026',
+        posting_quarter: 1,
+        download_link: 'https://fdpp.dilg.gov.ph/fdpp/report/document-download?id=241671'
+    }, {
+        id: 'sre_2026_q1',
+        name: 'Statement of Receipts and Expenditures (SRE)',
+        LGU: 'REGION VII - CENTRAL VISAYAS, CITY OF CEBU (CAPITAL), CITY OF CEBU (Capital)',
+        posting_year: '2026',
+        posting_quarter: 1,
+        download_link: 'https://fdpp.dilg.gov.ph/fdpp/report/document-download?id=241671'
+    }, {
         id: 'qscf_2026_q1',
         name: 'Quarterly Statement of Cash Flow (QSCF)',
-        LGU: 'REGION VII - CENTRAL VISAYAS, CEBU, ALCANTARA',
+        LGU: 'REGION VII - CENTRAL VISAYAS, CITY OF CEBU (CAPITAL), CITY OF CEBU (Capital)',
+        posting_year: '2026',
+        posting_quarter: 1,
+        download_link: 'https://fdpp.dilg.gov.ph/fdpp/report/document-download?id=241671'
+    }, {
+        id: 'mancom_2026_q1',
+        name: 'Manpower Complement (MANCOM)',
+        LGU: 'REGION VII - CENTRAL VISAYAS, CITY OF CEBU (CAPITAL), CITY OF CEBU (Capital)',
         posting_year: '2026',
         posting_quarter: 1,
         download_link: 'https://fdpp.dilg.gov.ph/fdpp/report/document-download?id=241671'
@@ -71,9 +100,23 @@ const reportsList = ref<reportGroup[]>([{
 {
     title: 'Procurement Reports',
     reports: [{
+        id: 'app_2026_q1',
+        name: 'Annual Procurement Plan or Procurement List (APP)',
+        LGU: 'REGION VII - CENTRAL VISAYAS, CITY OF CEBU (CAPITAL), CITY OF CEBU (Capital)',
+        posting_year: '2026',
+        posting_quarter: 1,
+        download_link: 'https://fdpp.dilg.gov.ph/fdpp/report/document-download?id=247698'
+    }, {
         id: 'brcwgs_2026_q1',
         name: 'Bid Results on Civil Works, Goods and Services, and Consulting Services (BRCWGS)',
-        LGU: 'REGION VII - CENTRAL VISAYAS, CEBU, ALCANTARA',
+        LGU: 'REGION VII - CENTRAL VISAYAS, CITY OF CEBU (CAPITAL), CITY OF CEBU (Capital)',
+        posting_year: '2026',
+        posting_quarter: 1,
+        download_link: 'https://fdpp.dilg.gov.ph/fdpp/report/document-download?id=247698'
+    }, {
+        id: 'spp_2026_q1',
+        name: 'Supplemental Procurement Plan (SPP)',
+        LGU: 'REGION VII - CENTRAL VISAYAS, CITY OF CEBU (CAPITAL), CITY OF CEBU (Capital)',
         posting_year: '2026',
         posting_quarter: 1,
         download_link: 'https://fdpp.dilg.gov.ph/fdpp/report/document-download?id=247698'
@@ -85,7 +128,42 @@ const reportsList = ref<reportGroup[]>([{
     reports: [{
         id: 'uca_2026_q1',
         name: 'Unliquidated Cash Advances (UCA)',
-        LGU: 'REGION VII - CENTRAL VISAYAS, CEBU, ALCANTARA',
+        LGU: 'REGION VII - CENTRAL VISAYAS, CITY OF CEBU (CAPITAL), CITY OF CEBU (Capital)',
+        posting_year: '2026',
+        posting_quarter: 1,
+        download_link: 'https://fdpp.dilg.gov.ph/fdpp/report/document-download?id=241816'
+    }, {
+        id: 'sef_2026_q1',
+        name: 'Report of SEF Utilization (SEF)',
+        LGU: 'REGION VII - CENTRAL VISAYAS, CITY OF CEBU (CAPITAL), CITY OF CEBU (Capital)',
+        posting_year: '2026',
+        posting_quarter: 1,
+        download_link: 'https://fdpp.dilg.gov.ph/fdpp/report/document-download?id=241816'
+    }, {
+        id: 'agdar_2026_q1',
+        name: 'Annual GAD Accomplishment Report (AGDAR)',
+        LGU: 'REGION VII - CENTRAL VISAYAS, CITY OF CEBU (CAPITAL), CITY OF CEBU (Capital)',
+        posting_year: '2026',
+        posting_quarter: 1,
+        download_link: 'https://fdpp.dilg.gov.ph/fdpp/report/document-download?id=241816'
+    }, {
+        id: 'tfu_2026_q1',
+        name: 'Trust Fund (PDAF) Utilization (TFU)',
+        LGU: 'REGION VII - CENTRAL VISAYAS, CITY OF CEBU (CAPITAL), CITY OF CEBU (Capital)',
+        posting_year: '2026',
+        posting_quarter: 1,
+        download_link: 'https://fdpp.dilg.gov.ph/fdpp/report/document-download?id=241816'
+    }, {
+        id: 'ntau_2026_q1',
+        name: '20% of the National Tax Allotment Utilization (NTAU)',
+        LGU: 'REGION VII - CENTRAL VISAYAS, CITY OF CEBU (CAPITAL), CITY OF CEBU (Capital)',
+        posting_year: '2026',
+        posting_quarter: 1,
+        download_link: 'https://fdpp.dilg.gov.ph/fdpp/report/document-download?id=241816'
+    }, {
+        id: 'ldrrmf_2026_q1',
+        name: 'Report of Local Disaster Risk Reduction and Management Fund (LDRRMF) Utilization (LDRRMF)',
+        LGU: 'REGION VII - CENTRAL VISAYAS, CITY OF CEBU (CAPITAL), CITY OF CEBU (Capital)',
         posting_year: '2026',
         posting_quarter: 1,
         download_link: 'https://fdpp.dilg.gov.ph/fdpp/report/document-download?id=241816'
