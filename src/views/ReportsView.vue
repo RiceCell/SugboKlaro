@@ -1,6 +1,8 @@
 <template>
-    <main class="flex h-screen bg-linear-to-b from-dark-blue-gr-start to-dark-blue-gr-end overflow-hidden">
-        Poop
+    <main>
+        <h1>Budget Reports</h1>
+        <h1>Procurement Reports</h1>
+        <h1>Special Purpose Fund Reports</h1>
     </main>
 </template>
 
