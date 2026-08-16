@@ -90,7 +90,6 @@ const formatCurrency = (value: any) => {
 };
 
 // Identify which DILG Document Type is being presented
-
 const docType = computed(() => {
   if (props.data?.doc_type) return props.data.doc_type.toUpperCase();
   const ruleId = props.data?.rule_id || '';
@@ -105,5 +104,18 @@ const docType = computed(() => {
   
   return 'BRCWGS';
 });
+
+
+// Dynamic Section Header Title
+const getSectionTitle = () => {
+  switch (docType.value) {
+    case 'QSCF':
+      return 'Cash Flow Statement Details';
+    case 'UCA':
+      return 'Cash Advance Details';
+    default:
+      return 'Project Details';
+  }
+};
 
 </script>
