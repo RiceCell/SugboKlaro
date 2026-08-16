@@ -3,21 +3,24 @@ import { ref } from 'vue';
 import ReportDetails from '../components/ReportDetails.vue';
 
 const sample = ref({
-  "rule_id": "PROC-001",
-  "status": "missing_data",
-  "message": "ABC or bid amount missing — cannot verify ceiling compliance",
-  "legal_basis": {
-    "law": "RA 9184",
-    "section": "Sec. 31",
-    "title": "Ceiling for Bid Prices"
-  },
-  "row_ref": 1298,
-  "details": {
-    "project_name": "Procurement of Toners & Cartridges",
-    "abc": null,
-    "bid_amount": 1244796.0,
-    "winning_bidder": "SO Photo Print Trading"
-  }
+      "rule_id": "UCA-001",
+      "status": "flagged",
+      "message": "₱80.00 of this cash advance is unliquidated past 1 year — exceeds COA Circular 97-002 liquidation deadlines",
+      "legal_basis": {
+        "law": "COA Circular No. 97-002",
+        "section": "Liquidation Deadlines",
+        "title": "Guidelines on the Grant, Utilization, and Liquidation of Cash Advances"
+      },
+      "row_ref": "ABELLA,NAPOLEON .",
+      "details": {
+        "name_of_debtor": "ABELLA,NAPOLEON .",
+        "amount_balance": 80.0,
+        "purpose": "Beg Bal",
+        "date_granted": "2006-02-28",
+        "fund_source": "GENERAL FUND",
+        "cash_advance_type": "Cash Advance - Disbursing Officer (10305030-001)",
+        "balance_direction": "debt"
+      }
 });
 
 import Chatbot from '../components/Chatbot.vue';
