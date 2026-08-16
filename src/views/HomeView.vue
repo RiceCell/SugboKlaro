@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import { ref } from 'vue';
-//import HelloWorld from './Landing.vue/index.js'//
 import ReportDetails from '../components/ReportDetails.vue';
 
 const sample = ref({

@@ -124,8 +124,7 @@
   </div>
 </template>
 
-
-<script setup>
+<script setup lang="ts">
 import { ref, nextTick } from 'vue'
 import { X, Send, MessageCircleMore} from '@lucide/vue';
 
