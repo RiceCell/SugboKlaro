@@ -52,7 +52,7 @@
   </div>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import { ref, nextTick } from 'vue'
 
 const newMessage = ref('')
@@ -62,8 +62,6 @@ const chatBox = ref(null)
 const messages = ref([
   { role: 'bot', content: 'blabla' },
 ])
-
-
 
 const sendMessage = () => {
   const text = newMessage.value.trim()
