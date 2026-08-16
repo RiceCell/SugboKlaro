@@ -116,7 +116,7 @@ const getCardClass = (index: number) => {
   switch (diff) {
     // Center Card (Active)
     case 0: 
-      return 'translate-x-0 scale-105 z-50 opacity-100 hover:scale-105 shadow-2xl';
+      return 'shadow-[0_0_20px_rgba(6,182,212,0.8)] rounded-lg border-2 border-[#00D8FF] translate-x-0 scale-105 z-50 opacity-100 hover:scale-105 shadow-2xl';
     
     // Right Side 1
     case 1: 
