@@ -1,9 +1,9 @@
 import { genAI } from "./geminiClient";
 
 import chatbotSources from "../../data/chatbot_sources.json";
-import brcgwsResults from "../../data/compliance_results/brcwgs.json";
-import qscfResults from "../../data/compliance_results/qscf.json";
-import ucaResults from "../../data/compliance_results/uca.json";
+import brcgwsResults from "../../data/compliance_results/brcwgs_2026_q1.json";
+import qscfResults from "../../data/compliance_results/qscf_2026_q1.json";
+import ucaResults from "../../data/compliance_results/uca_2026_q1.json";
 
 export interface Message{
     role: 'user' | 'bot';

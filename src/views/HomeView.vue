@@ -13,6 +13,7 @@
       </p>
     </div>
 
+    
     <!-- Carousel Container -->
     <div 
       class="relative w-full max-w-6xl h-[600px] -mt-15 flex items-center justify-center perspective-1000"
@@ -68,9 +69,9 @@ import { ref, onMounted, onUnmounted } from 'vue';
 import ReportDetails from '../components/ReportDetails.vue';
 
 // Import the datasets 
-import brcwgsData from '../../data/compliance_results/brcwgs.json';
-import qscfData from '../../data/compliance_results/qscf.json';
-import ucaData from '../../data/compliance_results/uca.json';
+import brcwgsData from '../../data/compliance_results/brcwgs_2026_q1.json';
+import qscfData from '../../data/compliance_results/qscf_2026_q1.json';
+import ucaData from '../../data/compliance_results/uca_2026_q1.json';
 
 // Extract 6 sample items (2 from each JSON) and inject the root doc_type[cite: 13]
 const sampleCards = [
@@ -78,7 +79,8 @@ const sampleCards = [
   ...qscfData.results.slice(0, 2).map((r: any) => ({ ...r, doc_type: qscfData.doc_type })),
   ...ucaData.results.slice(0, 2).map((r: any) => ({ ...r, doc_type: ucaData.doc_type }))
 ];
-
+// search state
+const searchQuery = ref('');
 // Carousel State
 const currentIndex = ref(0);
 let autoPlayInterval: ReturnType<typeof setInterval> | null = null;
