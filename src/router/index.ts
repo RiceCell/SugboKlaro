@@ -2,6 +2,7 @@ import { createRouter, createWebHistory, type RouteRecordRaw } from 'vue-router'
 import Landing from '../views/Landing.vue'
 import HomeView from '../views/HomeView.vue'
 import ReportsView from '../views/ReportsView.vue'
+import SpecificReportView from '../views/SpecificReportView.vue'
 
 const routes: RouteRecordRaw[] = [
   {
@@ -19,6 +20,12 @@ const routes: RouteRecordRaw[] = [
     path: '/reports',
     name: 'reports',
     component: ReportsView
+  },
+  {
+    path: '/reports/:id',
+    name: 'specificReport',
+    component: SpecificReportView,
+    props: true
   }
 ]
 
