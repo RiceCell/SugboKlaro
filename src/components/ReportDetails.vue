@@ -69,7 +69,7 @@
 </template>
 
 <script setup lang="ts">
-
+import { computed } from 'vue';
 const props = defineProps<{
     data: any
 }>(); 
@@ -88,4 +88,22 @@ const formatCurrency = (value: any) => {
     currency: 'PHP'
   }).format(value);
 };
+
+// Identify which DILG Document Type is being presented
+
+const docType = computed(() => {
+  if (props.data?.doc_type) return props.data.doc_type.toUpperCase();
+  const ruleId = props.data?.rule_id || '';
+  if (ruleId.startsWith('PROC')) return 'BRCWGS';
+  if (ruleId.startsWith('BUD')) return 'QSCF';
+  if (ruleId.startsWith('UCA')) return 'UCA';
+  
+  // Fallback by checking field attributes inside details
+  if (props.data?.details?.winning_bidder !== undefined || props.data?.details?.abc !== undefined) return 'BRCWGS';
+  if (props.data?.details?.fund_type !== undefined || props.data?.details?.sum_of_funds !== undefined) return 'QSCF';
+  if (props.data?.details?.name_of_debtor !== undefined || props.data?.details?.cash_advance_type !== undefined) return 'UCA';
+  
+  return 'BRCWGS';
+});
+
 </script>
