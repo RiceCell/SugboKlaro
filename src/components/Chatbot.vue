@@ -114,7 +114,7 @@
 
   
     <Transition name="button">
-      <button v-if="!isOpen"@click="isOpen = true"
+      <button v-if="!isOpen" @click="isOpen = true"
         class=" fixed bottom-6 right-6 w-12 h-12 rounded-full bg-[#37b5e7] text-white shadow-[0_8px_30px_rgba(16,185,129,0.35)] flex items-center justify-center hover:bg-[#237899] hover:scale-105 active:scale-95 transition-all">
         <MessageCircleMore />
       </button>
@@ -127,15 +127,18 @@
 <script setup lang="ts">
 import { ref, nextTick } from 'vue'
 import { X, Send, MessageCircleMore} from '@lucide/vue';
+import { chatbotKnowledgebase, type Message } from '../services/chatbot';
+
 
 const isOpen = ref(false)
 const newMessage = ref('')
 const isTyping = ref(false)
-const chatBox = ref(null)
+const chatBox = ref<HTMLDivElement | null>(null)
+
 
 const messages = ref([
   {
-    role: 'bot', content: "Hi! 👋 I'm omai. How can I help you today?"
+    role: 'bot', content: "Hi! How can I help you today?"
   }
 ])
 
@@ -154,22 +157,22 @@ const sendMessage = async () => {
 
   if (!text) return
 
-  messages.value.push({ role: 'user',content: text})
+  messages.value.push({ role: 'user', content: text})
   newMessage.value = ''
 
   isTyping.value = true
 
   await scrollToBottom()
 
+  const botReply = await chatbotKnowledgebase(text);
 
-
-  setTimeout(() => {
-    isTyping.value = false
-  })
+  messages.value.push({ role: 'bot', content: botReply })
+  isTyping.value = false
+  await scrollToBottom()
 }
 
 
-const sendQuickMessage = (message) => {
+const sendQuickMessage = (message: string) => {
   newMessage.value = message
   sendMessage()
 }
