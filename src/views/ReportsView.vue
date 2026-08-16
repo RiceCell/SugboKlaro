@@ -17,14 +17,14 @@
                     </thead>
 
                     <tbody class="divide-y divide-slate-700">
-                        <tr v-for="(r, i) in rL.reports" :key="i" class="hover:bg-slate-700/40 transition-colors">
+                        <tr v-for="(r, i)  in rL.reports" :key="i" @click="handleRowClick(r)" class="hover:bg-slate-700/40 transition-colors cursor-pointer">
                             <td class="px-4 py-2 wrap-break-word font-light">{{ r.name }}</td>
                             <td class="px-4 py-2 wrap-break-word font-light">{{ r.LGU }}</td>
                             <td class="px-4 py-2 wrap-break-word font-light">{{ r.posting_year }}</td>
                             <td class="px-4 py-2 wrap-break-word font-light">{{ r.posting_quarter }}</td>
                             
                             <td v-if="r.download_link" class="px-4 py-2">
-                                <a :href="r.download_link" 
+                                <a :href="r.download_link" @click.stop
                                     class="inline-flex items-center justify-center w-8 h-8 bg-white rounded-lg text-slate-700 hover:bg-slate-200 transition-colors shadow-sm">
                                     <Download class="size-4.5" />
                                 </a>
@@ -40,8 +40,10 @@
 <script setup lang="ts">
 import { Download } from '@lucide/vue';
 import { ref } from 'vue';
+import { useRouter } from 'vue-router';
 
 interface reportDetails {
+    id: string;
     name: string;
     LGU: string;
     posting_year: string;
@@ -57,6 +59,7 @@ interface reportGroup {
 const reportsList = ref<reportGroup[]>([{
     title: 'Budget Reports',
     reports: [{
+        id: 'qscf_2026_q1',
         name: 'Quarterly Statement of Cash Flow (QSCF)',
         LGU: 'REGION VII - CENTRAL VISAYAS, CEBU, ALCANTARA',
         posting_year: '2026',
@@ -68,6 +71,7 @@ const reportsList = ref<reportGroup[]>([{
 {
     title: 'Procurement Reports',
     reports: [{
+        id: 'brcwgs_2026_q1',
         name: 'Bid Results on Civil Works, Goods and Services, and Consulting Services (BRCWGS)',
         LGU: 'REGION VII - CENTRAL VISAYAS, CEBU, ALCANTARA',
         posting_year: '2026',
@@ -79,6 +83,7 @@ const reportsList = ref<reportGroup[]>([{
 {
     title: 'Special Purpose Fund Reports',
     reports: [{
+        id: 'uca_2026_q1',
         name: 'Unliquidated Cash Advances (UCA)',
         LGU: 'REGION VII - CENTRAL VISAYAS, CEBU, ALCANTARA',
         posting_year: '2026',
@@ -88,4 +93,11 @@ const reportsList = ref<reportGroup[]>([{
     ]
 },
 ])
+
+const router = useRouter();
+
+const handleRowClick = (item: reportDetails) => {
+    console.log('Row clicked: ', item);
+    router.push(`${router.currentRoute.value.path}/${item.id}`)
+}   
 </script>
