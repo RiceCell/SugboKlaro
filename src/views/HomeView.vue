@@ -27,6 +27,7 @@ import Chatbot from '../components/Chatbot.vue';
 </script>
 
 <template>
+  <main class="flex w-full h-full bg-linear-to-b from-dark-blue-gr-start to-dark-blue-gr-end overflow-hidden">
     <ReportDetails :data="sample" />
-    <Chatbot />
+  </main>
 </template>

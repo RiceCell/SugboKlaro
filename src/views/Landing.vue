@@ -258,7 +258,7 @@ const backgroundStyle = computed(() => {
 
 
 <template>
-  <main class="relative min-h-[300vh] overflow-hidden  text-white">
+  <main class="relative w-full min-h-[300vh] overflow-hidden text-white bg-[#122545]">
     <div class="pointer-events-none fixed z-50 size-[300px] -translate-x-1/2 -translate-y-1/2 rounded-full blur-3xl"
       :style="{
         left: `${mouseX}px`,
@@ -760,21 +760,10 @@ const backgroundStyle = computed(() => {
               </p>
 
               <!-- BUTTON -->
-              <button type="button" class="rounded-lg bg-[#37b5e7] px-6 py-3 font-semibold text-slate-900 shadow-lg shadow-sky-500/20 transition-all duration-300 hover:scale-105 hover:bg-sky-300 active:scale-95">
-                Explore Now
-              </button>
-              <!--router push
-              <button 
-                @click="$router.push('/explore')" 
-                class="rounded-lg bg-[#37b5e7] px-6 py-3 font-semibold text-slate-900 transition-all duration-300 hover:scale-105 hover:bg-sky-300 active:scale-95">
-                Explore Now
-              </button>
-
-              <RouterLink to="/explore"
+              <RouterLink to="/home"
                 class="rounded-lg bg-[#37b5e7] px-6 py-3 font-semibold text-slate-900 shadow-lg shadow-sky-500/20 transition-all duration-300 hover:scale-105 hover:bg-sky-300 active:scale-95">
                 Explore Now  
               </RouterLink>
-              -->
             </div>
           </div>
         </div>
