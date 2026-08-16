@@ -1,5 +1,6 @@
 <template>
     <main class="p-8 text-slate-100 flex flex-col gap-10">
+        <Filter />
         <div v-for="(rL, index) in reportsList" :key="index">
             <!-- Styled the title -->
             <h1 class="text-2xl font-bold mb-2 text-white uppercase">{{ rL.title }}</h1>
@@ -40,6 +41,7 @@
 <script setup lang="ts">
 import { Download } from '@lucide/vue';
 import { ref } from 'vue';
+import Filter from '../components/Filter.vue';
 
 interface reportDetails {
     name: string;
