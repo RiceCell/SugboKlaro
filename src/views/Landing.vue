@@ -258,7 +258,7 @@ const backgroundStyle = computed(() => {
 
 
 <template>
-  <main class="relative min-h-[300vh] overflow-hidden  text-white">
+  <main class="relative min-h-[300vh] overflow-hidden text-white bg-[#122545]">
     <div class="pointer-events-none fixed z-50 size-[300px] -translate-x-1/2 -translate-y-1/2 rounded-full blur-3xl"
       :style="{
         left: `${mouseX}px`,
