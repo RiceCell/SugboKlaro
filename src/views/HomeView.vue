@@ -7,7 +7,9 @@
         Transparency Reports Overview
       </h1>
       <p class="text-sky-200 mt-3 text-sm max-w-lg mx-auto leading-relaxed">
-        Real-time compliance tracking for procurements, cash flows, and special funds. Hover over a card to pause the cycle, or click "Check" to view the AI-generated anomaly report.
+        Automated, rule-based compliance checks for Full Disclosure Policy reports such as
+        procurements, cash flow, and special funds submitted by local governments. 
+        Click "Check" for the full breakdown and legal citation behind each result.
       </p>
     </div>
 
