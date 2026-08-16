@@ -13,7 +13,15 @@
       </p>
     </div>
 
-    
+    <div class="relative z-30 w-full max-w-md mx-auto mt-6 px-4">
+      <input 
+        v-model="searchQuery" 
+        type="text" 
+        placeholder="Search by rule ID, message, or officer..." 
+        class="w-full px-5 py-3 rounded-full bg-white/10 border border-sky-300/30 text-white placeholder-sky-200/50 backdrop-blur-md focus:outline-none focus:border-sky-300 focus:ring-2 focus:ring-sky-300/50 transition-all shadow-lg"
+      />
+    </div>
+
     <!-- Carousel Container -->
     <div 
       class="relative w-full max-w-6xl h-[600px] -mt-15 flex items-center justify-center perspective-1000"
