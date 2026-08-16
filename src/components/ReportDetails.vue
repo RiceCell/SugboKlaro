@@ -1,45 +1,33 @@
 <template>
   <div class="absolute z-10 bg-linear-to-b from-dark-blue-gr-start to-dark-blue-gr-end border border-slate-200 rounded-lg shadow-md font-sans overflow-hidden">
     
+    <!-- HEADER -->
     <div class="flex justify-between items-center px-5 py-4 border-b border-slate-200">
       <h3 class="m-0 text-lg text-white font-semibold">{{ data.rule_id }}</h3>
-      <span 
-        class="px-2.5 py-1 rounded-full text-xs font-semibold tracking-wide uppercase"
-        :class="getStatusClass(data.status)"
+      
+      <!-- Check Trigger Button -->
+      <button 
+        type="button"
+        @click="isModalOpen = true"
+        class="border-cyan-gr-start border px-3.5 py-1 rounded-full text-xs font-bold text-cyan-gr-start tracking-wide uppercase transition-all duration-150 cursor-pointer shadow-xs hover:brightness-70 active:scale-95"
       >
-        {{ formatStatus(data.status) }}
-      </span>
+        Check
+      </button>
     </div>
 
-    <!-- LEGAL BASIS -->
-    <div class="px-5 py-4 border-b border-slate-200 last:border-b-0">
-      <h4 class="mb-3 text-sm text-white uppercase tracking-wide font-semibold">Legal Basis</h4>
-      <div class="text-sm text-slate-200">
-        <span class="bg-sky-100 text-sky-700 px-1.5 py-0.5 rounded text-xs font-bold mr-2">
-          {{ data.legal_basis?.law }}
-        </span>
-        <strong>{{ data.legal_basis?.section }}:</strong> 
-        {{ data.legal_basis?.title }}
-      </div>
-      <!-- NEW: Compliance Finding / Observation Message -->
-      <div v-if="data.message" class="mt-2 text-xs text-slate-300 italic bg-white/5 p-2 rounded border border-white/10">
-        {{ data.message }}
-      </div>
-    </div>
-
-    <!-- DETAILS -->
-    <div class="px-5 py-4 border-b border-slate-200 last:border-b-0">
+    <!-- DETAILS (Starts here directly) -->
+    <div class="px-5 py-4">
       <div class="flex justify-between items-center mb-3">
         <h4 class="m-0 text-sm text-white uppercase tracking-wide font-semibold">
           {{ getSectionTitle() }}
         </h4>
-        <!-- NEW: Dynamic Composite Identifier Badge for BRCWGS, QSCF, and UCA -->
+        <!-- Dynamic Composite Identifier Badge -->
         <span class="text-xs text-slate-600 bg-slate-100 px-2 py-0.5 rounded font-medium">
           {{ getReportBadge() }}
         </span>
       </div>
       
-      <!-- NEW: TYPE 1 - BRCWGS (Procurement Reports) -->
+      <!-- TYPE 1: BRCWGS (Procurement Reports) -->
       <div v-if="docType === 'BRCWGS'" class="grid grid-cols-2 gap-4">
         <div class="flex flex-col col-span-2">
           <label class="text-xs text-white mb-1">Project Name</label>
@@ -51,7 +39,6 @@
           <span class="text-sm text-slate-200 font-medium">{{ data.details?.winning_bidder || 'N/A' }}</span>
         </div>
 
-        <!-- Half Width Items -->
         <div class="flex flex-col">
           <label class="text-xs text-white mb-1">Approved Budget (ABC)</label>
           <span 
@@ -73,9 +60,9 @@
         </div>
       </div>
 
-      <!-- NEW: TYPE 2 - QSCF (Quarterly Statement of Cash Flow) -->
+      <!-- TYPE 2: QSCF (Quarterly Statement of Cash Flow) -->
       <div v-else-if="docType === 'QSCF'" class="grid grid-cols-2 gap-4">
-        <!-- QSCF BUD-001: Net Operating Cash Flow Reconciliation -->
+        <!-- QSCF BUD-001 -->
         <template v-if="data.details?.total_cash_inflow !== undefined">
           <div class="flex flex-col col-span-2">
             <label class="text-xs text-white mb-1">Fund Classification</label>
@@ -99,7 +86,7 @@
           </div>
         </template>
 
-        <!-- QSCF BUD-002: Net Cash Flow (Operating + Investing) -->
+        <!-- QSCF BUD-002 -->
         <template v-else-if="data.details?.net_cash_investing !== undefined">
           <div class="flex flex-col col-span-2">
             <label class="text-xs text-white mb-1">Fund Classification</label>
@@ -123,7 +110,7 @@
           </div>
         </template>
 
-        <!-- QSCF BUD-003: Beginning vs Ending Cash Balance -->
+        <!-- QSCF BUD-003 -->
         <template v-else-if="data.details?.beginning_balance !== undefined">
           <div class="flex flex-col col-span-2">
             <label class="text-xs text-white mb-1">Fund Classification</label>
@@ -147,7 +134,7 @@
           </div>
         </template>
 
-        <!-- QSCF BUD-004: Cross-Fund Reconciliation Check -->
+        <!-- QSCF BUD-004 -->
         <template v-else-if="data.details?.sum_of_funds !== undefined">
           <div class="flex flex-col col-span-2">
             <label class="text-xs text-white mb-1">Reconciliation Field</label>
@@ -176,7 +163,7 @@
         </template>
       </div>
 
-      <!-- NEW: TYPE 3 - UCA (Unliquidated Cash Advances) -->
+      <!-- TYPE 3: UCA (Unliquidated Cash Advances) -->
       <div v-else-if="docType === 'UCA'" class="grid grid-cols-2 gap-4">
         <div class="flex flex-col col-span-2">
           <label class="text-xs text-white mb-1">Accountable Officer / Debtor</label>
@@ -221,23 +208,29 @@
         </div>
       </div>
     </div>
-    
+
+    <!-- MODAL PORTAL -->
+    <Teleport to="body">
+      <ReportOverviewModal 
+        v-if="isModalOpen" 
+        :data="data" 
+        @close="isModalOpen = false" 
+      />
+    </Teleport>
+
   </div>
 </template>
 
 <script setup lang="ts">
-import { computed } from 'vue';
+import { ref, computed } from 'vue';
+import ReportOverviewModal from './ReportOverviewModal.vue';
 
 const props = defineProps<{
-    data: any
+  data: any
 }>(); 
 
-const formatStatus = (status: any) => {
-  if (!status) return 'UNKNOWN';
-  return status.replace(/_/g, ' ').toUpperCase();
-};
+const isModalOpen = ref(false);
 
-// Identify which DILG Document Type is being presented
 const docType = computed(() => {
   if (props.data?.doc_type) return props.data.doc_type.toUpperCase();
   const ruleId = props.data?.rule_id || '';
@@ -245,7 +238,6 @@ const docType = computed(() => {
   if (ruleId.startsWith('BUD')) return 'QSCF';
   if (ruleId.startsWith('UCA')) return 'UCA';
   
-  // Fallback by checking field attributes inside details
   if (props.data?.details?.winning_bidder !== undefined || props.data?.details?.abc !== undefined) return 'BRCWGS';
   if (props.data?.details?.fund_type !== undefined || props.data?.details?.sum_of_funds !== undefined) return 'QSCF';
   if (props.data?.details?.name_of_debtor !== undefined || props.data?.details?.cash_advance_type !== undefined) return 'UCA';
@@ -253,7 +245,6 @@ const docType = computed(() => {
   return 'BRCWGS';
 });
 
-// Dynamic Section Header Title
 const getSectionTitle = () => {
   switch (docType.value) {
     case 'QSCF':
@@ -265,7 +256,6 @@ const getSectionTitle = () => {
   }
 };
 
-// Composite/Isolated Identifier Badge across all report types
 const getReportBadge = () => {
   const d = props.data;
   if (!d) return 'N/A';
@@ -283,30 +273,25 @@ const getReportBadge = () => {
     return `${fund} • ${date}`;
   }
 
-  // Default to BRCWGS row reference
   return `Row #${d.row_ref ?? 'N/A'}`;
 };
 
-// Status badge styling
 const getStatusClass = (status: string) => {
   const s = (status || '').toLowerCase();
-  if (s === 'pass') return 'bg-emerald-500/20 text-emerald-300 border border-emerald-500/30';
-  if (s === 'flagged') return 'bg-rose-500/20 text-rose-300 border border-rose-500/30';
-  if (s === 'missing_data') return 'bg-amber-500/20 text-amber-300 border border-amber-500/30';
-  return 'bg-slate-500/20 text-slate-300 border border-slate-500/30';
+  if (s === 'pass') return 'bg-emerald-500/20 text-emerald-300 border border-emerald-500/40 hover:bg-emerald-500/30';
+  if (s === 'flagged') return 'bg-rose-500/20 text-rose-300 border border-rose-500/40 hover:bg-rose-500/30';
+  if (s === 'missing_data') return 'bg-amber-500/20 text-amber-300 border border-amber-500/40 hover:bg-amber-500/30';
+  return 'bg-slate-500/20 text-slate-300 border border-slate-500/40 hover:bg-slate-500/30';
 };
 
-// Utility to format numbers into currency (defaults to PHP based on RA 9184)
 const formatCurrency = (value: any) => {
   if (value === null || value === undefined) return 'Missing / Not Provided';
-  
   return new Intl.NumberFormat('en-PH', {
     style: 'currency',
     currency: 'PHP'
   }).format(value);
 };
 
-// Convert snake_case field keys to friendly labels for QSCF BUD-004
 const formatFieldName = (name: string) => {
   if (!name) return 'Total Reconciliation';
   return name
@@ -314,7 +299,6 @@ const formatFieldName = (name: string) => {
     .replace(/\b\w/g, (char) => char.toUpperCase());
 };
 
-// Human-readable balance directions for UCA reports
 const formatBalanceDirection = (direction: string) => {
   switch (direction) {
     case 'debt':

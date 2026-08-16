@@ -69,9 +69,6 @@
                 AI Overview
               </h4>
             </div>
-            <span class="text-[10px] text-slate-400 uppercase tracking-wider bg-white/5 px-2 py-0.5 rounded">
-              Gemini Powered
-            </span>
           </div>
 
           <!-- Loading State -->
