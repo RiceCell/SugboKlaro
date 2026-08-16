@@ -1,17 +1,24 @@
 import { createRouter, createWebHistory, type RouteRecordRaw } from 'vue-router'
-import Dashboard from '../views/HomeView.vue'
 import Landing from '../views/Landing.vue'
+import HomeView from '../views/HomeView.vue'
+import ReportsView from '../views/ReportsView.vue'
 
 const routes: RouteRecordRaw[] = [
   {
     path: '/',
-    name: 'home',
+    name: 'landing',
     component: Landing,
+    meta: { hideNavbar: true }
   },
   {
-    path: '/dashboard',
-    name: 'dashboard',
-    component: Dashboard,
+    path: '/home',
+    name: 'home',
+    component: HomeView
+  },
+  {
+    path: '/reports',
+    name: 'reports',
+    component: ReportsView
   }
 ]
 
