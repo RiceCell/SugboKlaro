@@ -760,21 +760,14 @@ const backgroundStyle = computed(() => {
               </p>
 
               <!-- BUTTON -->
-              <button type="button" class="rounded-lg bg-[#37b5e7] px-6 py-3 font-semibold text-slate-900 shadow-lg shadow-sky-500/20 transition-all duration-300 hover:scale-105 hover:bg-sky-300 active:scale-95">
-                Explore Now
-              </button>
-              <!--router push
+              
               <button 
-                @click="$router.push('/explore')" 
+                @click="$router.push('/dashboard')" 
                 class="rounded-lg bg-[#37b5e7] px-6 py-3 font-semibold text-slate-900 transition-all duration-300 hover:scale-105 hover:bg-sky-300 active:scale-95">
                 Explore Now
               </button>
-
-              <RouterLink to="/explore"
-                class="rounded-lg bg-[#37b5e7] px-6 py-3 font-semibold text-slate-900 shadow-lg shadow-sky-500/20 transition-all duration-300 hover:scale-105 hover:bg-sky-300 active:scale-95">
-                Explore Now  
-              </RouterLink>
-              -->
+         
+              
             </div>
           </div>
         </div>
