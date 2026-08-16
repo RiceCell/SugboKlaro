@@ -1,4 +1,4 @@
-<script setup>
+<script setup lang="ts">
 import { ref, computed, onMounted, onUnmounted } from 'vue'
 
 
@@ -19,7 +19,7 @@ const handleScroll = () => {
 const mouseX = ref(0)
 const mouseY = ref(0)
 
-const handleMouseMove = (event) => {
+const handleMouseMove = (event: any) => {
   mouseX.value = event.clientX
   mouseY.value = event.clientY
 }
@@ -223,7 +223,7 @@ const documentPieces = [
 
 
 
-const getPieceTransform = (piece) => {
+const getPieceTransform = (piece: any) => {
 
   const d = cubeDistance.value
 
