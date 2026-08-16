@@ -1,31 +1,56 @@
 import { genAI } from "./geminiClient";
-import chatbotSources from "../../data/chatbot_sources.json";
-import brcwgsResults from "../../data/compliance_results/brcwgs.json";
 
-export async function generateProjectOverview(projectRef: string): Promise<void> {
+// REMOVED: import chatbotSources, brcwgsResults, qscfResults, ucaResults
+
+export async function generateProjectOverview(reportItem: any): Promise<string> {
   const model = genAI.getGenerativeModel({
     model: "gemini-3.5-flash-lite",
+    generationConfig: {
+      temperature: 0.1,
+      maxOutputTokens: 300,
+    },
     systemInstruction: `
-      You are the SugboKlaro AI Overview generator.
-      Create a short, formal, and concise overview explaining why a project passed or failed compliance checks.
-      Use the provided JSON data to explain the specific flags (e.g., Zero-Variance, Vendor Concentration, ABC Ceiling) based on Philippine procurement laws.
-      
-      Data Context:
-      Chatbot Sources: ${JSON.stringify(chatbotSources)}
-      Compliance Results: ${JSON.stringify(brcwgsResults)}
-      
-      Do not hallucinate. Be objective and non-accusatory.
+      You are the SugboKlaro AI Overview generator for Cebu City public financial and procurement compliance reports.
+      Your task is to generate a concise, objective, and high-level 2 to 4 sentence summary for a given report finding.
+
+      STRICT OUTPUT GUIDELINES:
+      1. Length: Exactly 2 to 4 sentences. Do not use bullet points or introductory phrases.
+      2. If status is "FLAGGED" or "FAIL":
+         Explain the specific reason why the item was flagged.
+         Include the key figures or threshold violations involved.
+         Mention the relevant legal standard provided in the context in plain terms.
+      3. If status is "PASS":
+         Provide a short recap and summary of the project or fund transaction, confirming compliance.
+      4. If status is "MISSING_DATA":
+         State what critical record or value is absent.
+      5. Tone: Factual, professional, non-accusatory, and grounded strictly in the provided data context.
     `
   });
 
-  // Target the specific project using the reference number
-  const prompt = `Generate a concise compliance overview for the project with reference number: ${projectRef}. Explain any anomalies or confirm its compliance based on the context.`;
-  
-    try {
-        const result = await model.generateContent(prompt);
-        console.log(`[AI Overview Result for ${projectRef}]:`);
-        console.log(result.response.text());
-    } catch (error) {
-        console.error("Failed to generate AI overview:", error);
-    };
+  const ruleId = reportItem?.rule_id || "N/A";
+  const status = reportItem?.status || "UNKNOWN";
+  const message = reportItem?.message || "No observation recorded.";
+  const legalBasis = reportItem?.legal_basis
+    ? `${reportItem.legal_basis.law} ${reportItem.legal_basis.section}: ${reportItem.legal_basis.title}`
+    : "N/A";
+  const details = reportItem?.details ? JSON.stringify(reportItem.details) : "N/A";
+  const rowRef = reportItem?.row_ref ?? "N/A";
+
+  // Inject only the specific row data into the prompt
+  const prompt = `Generate a 2-4 sentence AI overview for this compliance finding:
+- Document Type / Rule ID: ${ruleId}
+- Status: ${status}
+- Finding / Message: ${message}
+- Legal Basis: ${legalBasis}
+- Item Details: ${details}
+- Row / Identifier: ${rowRef}
+`;
+
+  try {
+    const result = await model.generateContent(prompt);
+    return result.response.text().trim();
+  } catch (error) {
+    console.error("Failed to generate AI overview:", error);
+    throw error;
+  }
 }

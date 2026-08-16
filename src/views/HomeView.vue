@@ -3,22 +3,27 @@ import { ref } from 'vue';
 import ReportDetails from '../components/ReportDetails.vue';
 
 const sample = ref({
-      "rule_id": "PROC-001",
-      "status": "missing_data",
-      "message": "ABC or bid amount missing — cannot verify ceiling compliance",
+      "rule_id": "UCA-001",
+      "status": "flagged",
+      "message": "₱100.00 of this cash advance is unliquidated past 1 year — exceeds COA Circular 97-002 liquidation deadlines",
       "legal_basis": {
-        "law": "RA 9184",
-        "section": "Sec. 31",
-        "title": "Ceiling for Bid Prices"
+        "law": "COA Circular No. 97-002",
+        "section": "Liquidation Deadlines",
+        "title": "Guidelines on the Grant, Utilization, and Liquidation of Cash Advances"
       },
-      "row_ref": 795,
+      "row_ref": "ANDRES,GUILLERMO .",
       "details": {
-        "project_name": "Procurement of Printing Services",
-        "abc": null,
-        "bid_amount": 398000.0,
-        "winning_bidder": "F.F. Sibi Enterprises Incorporated"
+        "name_of_debtor": "ANDRES,GUILLERMO .",
+        "amount_balance": 100.0,
+        "purpose": "Beg Bal",
+        "date_granted": "2006-02-28",
+        "fund_source": "GENERAL FUND",
+        "cash_advance_type": "Cash Advance - Disbursing Officer (10305030-001)",
+        "balance_direction": "debt"
       }
-    });
+});
+
+import Chatbot from '../components/Chatbot.vue';
 </script>
 
 <template>
