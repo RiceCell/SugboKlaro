@@ -1,14 +1,19 @@
 <template>
   <div class="w-full overflow-hidden p-6">
     <transition
-      
+      enter-active-class="transition-all duration-300 ease-out"
+      enter-from-class="opacity-0 translate-y-10"
+      enter-to-class="opacity-100 translate-y-0"
+      leave-active-class="transition-all duration-200 ease-in"
+      leave-from-class="opacity-100 translate-y-0"
+      leave-to-class="opacity-0 translate-y-10"
     >
       <div
           v-if="selectedReport" 
-          class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-xs font-sans"
+          class="fixed -inset-y-16 inset-x-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-xs font-sans"
           @click.self="closeReport"
       > 
-        <button class="group absolute p-2 z-100 rounded-full top-8 right-10 hover:bg-slate-800 cursor-pointer" @click="closeReport">
+        <button class="group absolute p-2 z-100 rounded-full top-24 right-10 hover:bg-slate-800 cursor-pointer" @click="closeReport">
           <XIcon class="size-10 text-cyan-gr-end group-hover:text-cyan-gr-start" />
         </button>
         <img :src="BackgroundFolder" class="absolute w-1/2" @click.stop />
@@ -22,8 +27,8 @@
     <div v-else-if="reportData" class="w-full p-5">
         
         <section class="grid grid-cols-4 gap-8 px-5">
-            <button @click="openReport(r)" 
-                v-for="r in reportData.results"
+            <button @click="openReport(r)"
+                v-for="(r, i) in reportData.results" :key="i"
                 class="p-2 pt-6 flex flex-col items-center gap-3 rounded-2xl transition-colors group hover:bg-slate-800 cursor-pointer">
                 <img :src="folderColor(r.status)" class="w-1/2 transition-all group-hover:scale-110 group-hover:-rotate-2" />
 
