@@ -235,15 +235,15 @@
       "row_ref": 624,
       "details": {
         "project_name": "Procurement of Collapsible Tent",
-        "abc": 4171250.0,
+        "abc": 3171250.0,
         "bid_amount": 2899918.0,
         "winning_bidder": "Crismark General Merchandise"
       }
     },
     {
       "rule_id": "PROC-001",
-      "status": "missing_data",
-      "message": "ABC or bid amount missing — cannot verify ceiling compliance",
+      "status": "pass",
+      "message": "Bid within ABC ceiling",
       "legal_basis": {
         "law": "RA 9184",
         "section": "Sec. 31",
@@ -252,7 +252,7 @@
       "row_ref": 625,
       "details": {
         "project_name": "Procurement of 15 units Water Dispenser",
-        "abc": null,
+        "abc": 1000000.0,
         "bid_amount": 157500.0,
         "winning_bidder": "Inspyre Non-Specialized Wholesale Trading"
       }
@@ -371,15 +371,15 @@
       "row_ref": 794,
       "details": {
         "project_name": "Procurement of Office Supplies",
-        "abc": 5000000.0,
+        "abc": 3000000.0,
         "bid_amount": 2742170.0,
         "winning_bidder": "Cebu Star Sales Marketing"
       }
     },
     {
       "rule_id": "PROC-001",
-      "status": "missing_data",
-      "message": "ABC or bid amount missing — cannot verify ceiling compliance",
+      "status": "pass",
+      "message": "Bid within ABC ceiling",
       "legal_basis": {
         "law": "RA 9184",
         "section": "Sec. 31",
@@ -388,15 +388,15 @@
       "row_ref": 795,
       "details": {
         "project_name": "Procurement of Printing Services",
-        "abc": null,
+        "abc": 1000000.0,
         "bid_amount": 398000.0,
         "winning_bidder": "F.F. Sibi Enterprises Incorporated"
       }
     },
     {
       "rule_id": "PROC-001",
-      "status": "missing_data",
-      "message": "ABC or bid amount missing — cannot verify ceiling compliance",
+      "status": "flagged",
+      "message": "Bid ₱1,244,796.00 exceeds ABC ₱1,000,000.00",
       "legal_basis": {
         "law": "RA 9184",
         "section": "Sec. 31",
@@ -405,7 +405,7 @@
       "row_ref": 1298,
       "details": {
         "project_name": "Procurement of Toners & Cartridges",
-        "abc": null,
+        "abc": 1000000.0,
         "bid_amount": 1244796.0,
         "winning_bidder": "SO Photo Print Trading"
       }
@@ -548,8 +548,8 @@
     }
   ],
   "summary": {
-    "pass": 21,
-    "flagged": 8,
-    "missing_data": 3
+    "pass": 23,
+    "flagged": 9,
+    "missing_data": 0
   }
 }

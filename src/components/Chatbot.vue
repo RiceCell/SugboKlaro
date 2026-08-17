@@ -16,7 +16,7 @@
 
               <!-- Sugbo Klaro Logo -->
               <div class="flex items-center">
-                <img  src="/SugboKlaroLogo_dark.png" class="h-6 w-auto max-w-[150px] object-contain" />
+                <img  src="../assets/SKAI.png" class="h-6 w-auto max-w-[150px] object-contain" />
               </div>
           </div>
 

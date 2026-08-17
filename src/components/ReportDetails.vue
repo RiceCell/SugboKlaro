@@ -17,7 +17,7 @@
 
     <!-- DETAILS (Starts here directly) -->
     <div class="px-5 py-4">
-      <div class="flex justify-between items-center mb-3">
+      <div class="flex justify-between items-center mb-3 gap-5">
         <h4 class="m-0 text-sm text-white uppercase tracking-wide font-semibold">
           {{ getSectionTitle() }}
         </h4>
