@@ -14,16 +14,20 @@
         </section>
 
         <!-- FDPP -->
-        <section class="mt-20 flex flex-col justify-start items-end">
-          <h1 class="text-4xl font-extrabold text-white tracking-wide drop-shadow-lg">
-            Where is the data from?
-          </h1>
-          <p class="text-sky-200 mt-3 text-sm max-w-lg text-right leading-relaxed">
-            All data is consolidated from the Full Disclure Property Portal 
-            <a href ="https://fdpp.dilg.gov.ph" target ="_blank" class="text-cyan-gr-start underline font-bold">(FDPP)</a> 
-            established by the Department of the Interior and Local Government 
-            <a href ="https://www.dilg.gov.ph" target ="_blank" class="text-cyan-gr-start underline font-bold">(DILG)</a>.
-          </p>
+        <section class="mt-20 flex justify-between items-center">
+            <img :src="FDPP" class="w-2/5" />
+            <div>
+                <h1 class="text-4xl font-extrabold text-white tracking-wide drop-shadow-lg">
+                    Where is the data from?
+                </h1>
+                <p class="text-sky-200 mt-3 text-sm max-w-lg text-right leading-relaxed">
+                    All data is consolidated from the Full Disclure Property Portal 
+                    <a href ="https://fdpp.dilg.gov.ph" target ="_blank" class="text-cyan-gr-start underline font-bold">(FDPP)</a> 
+                    established by the Department of the Interior and Local Government 
+                    <a href ="https://www.dilg.gov.ph" target ="_blank" class="text-cyan-gr-start underline font-bold">(DILG)</a>.
+                </p>  
+            </div>
+          
         </section>
 
         <!-- About Us -->
@@ -54,4 +58,5 @@
 <script setup lang="ts">
 import Logo from '../assets/SugboKlaroLogo_dark.png'
 import Us from '/us.jpg'
+import FDPP from '/FDPP.png'
 </script>
