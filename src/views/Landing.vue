@@ -294,34 +294,34 @@ const backgroundStyle = computed(() => {
 
           <!-- FRONT /DATA-->
           <div class="cube-face absolute inset-0 flex size-24 items-center justify-center rounded-lg bg-sky-300/80 text-sm font-bold text-slate-900 shadow-[0_0_40px_rgba(56,189,248,0.5)] [transform:translateZ(48px)]">
-            DATA
+            
           </div>
 
           <!-- BACK/info -->
           <div class="cube-face absolute inset-0 flex size-24 items-center justify-center rounded-lg bg-sky-300/80 text-sm font-bold text-slate-900 [transform:rotateY(180deg)_translateZ(48px)]">
-            INFO
+            
           </div>
 
           <!-- RIGHT/ -->
           <div
             class="cube-face absolute inset-0 flex size-24 items-center justify-center rounded-lg bg-sky-300/80 text-sm font-bold text-slate-900 [transform:rotateY(90deg)_translateZ(48px)]">
-            MAP
+            
           </div>
 
           <!-- LEFt/area -->
           <div class = "cube-face absolute inset-0 flex size-24 items-center justify-center rounded-lg bg-sky-300/80 text-sm font-bold text-slate-900 [transform:rotateY(-90deg)_translateZ(48px)]">
-            AREA
+            
           </div>
 
           <!-- TOP -->
           <div class="cube-face absolute inset-0 flex size-24 items-center justify-center rounded-lg bg-sky-300/80 text-sm font-bold text-slate-900 [transform:rotateX(90deg)_translateZ(48px)]">
-            SEARCH
+            
           </div>
 
 
           <!-- BOTTOM/ data -->
           <div class="cube-face absolute inset-0 flex size-24 items-center justify-center rounded-lg bg-sky-300/80 text-sm font-bold text-slate-900 [transform:rotateX(-90deg)_translateZ(48px)]">
-            DATA
+            
           </div>
 
         </div>
@@ -712,14 +712,12 @@ const backgroundStyle = computed(() => {
       <div  class="flex min-h-screen items-center justify-center">       
         <div class="text-center justify-center ">
           <img src="/SugboKlaroLogo_dark.png" class="h-[300px] w-[300px] object-contain mb-[100px] -translate-y-[100px]">
-          <h1 class="text-5xl font-bold tracking-tight">
-            Explore
+          <h1 class="text-xl font-bold tracking-tight text-sky-300">
+            Automated Transparency for your city
+
           </h1>
 
-          <p class="mt-4 text-slate-300">
-            Scroll down
-          </p>
-
+          
         </div>
 
       </div>
@@ -730,17 +728,17 @@ const backgroundStyle = computed(() => {
       <div class="flex min-h-screen items-center justify-center">
        <div class="text-center">
           <h2 class="text-4xl font-bold text-sky-300">
-            Discover
+            
           </h2>
 
           <p class="mt-4 text-slate-300">
-            Keep scrolling
+           
           </p>
 
         </div>
 
       </div>
-
+      
 
       <!-- END -->
 
