@@ -1,6 +1,6 @@
 <template>
     <main class="p-8 text-slate-100 flex flex-col gap-10">
-        <Filter />
+        <Filter @apply="handleFilters" />
         <div v-for="(rL, index) in reportsList" :key="index">
             <!-- Styled the title -->
             <h1 class="text-2xl font-bold mb-2 text-white uppercase">{{ rL.title }}</h1>
@@ -55,13 +55,16 @@
                 </table>
             </div>
         </div>
+        <div v-if="filteredReportsList.length === 0" class="text-center text-slate-400 py-10">
+            No reports match your selected filters.
+        </div>
     </main>
 </template>
 
 <script setup lang="ts">
 // NEW: Imported the 'Eye' icon from lucide
 import { Download, Eye } from '@lucide/vue';
-import { ref } from 'vue';
+import { ref, computed } from 'vue';
 import Filter from '../components/Filter.vue';
 import { useRouter } from 'vue-router';
 
@@ -198,15 +201,56 @@ const reportsList = ref<reportGroup[]>([
     ]
 },
 ])
+const activeFilters = ref<Record<string, string>>({});
+
+const handleFilters = (filters: Record<string, string>) => {
+    activeFilters.value = filters;
+};
+
+const filteredReportsList = computed(() => {
+    const filters = activeFilters.value;
+    
+    // If no filters are selected, return the original data entirely
+    if (Object.keys(filters).length === 0) return reportsList.value;
+
+    return reportsList.value.map(group => {
+        // Filter at the Group Level (Budget vs Procurement)
+        if (filters.Report && group.title !== filters.Report) {
+            // Return empty reports if group title doesn't match
+            return { ...group, reports: [] };
+        }
+
+        // Filter at the individual report level
+        const filteredChildren = group.reports.filter(report => {
+            
+            // Check Document type
+            if (filters.Document && report.name !== filters.Document) return false;
+            
+            // Check Year
+            if (filters.Year && report.posting_year !== filters.Year) return false;
+
+            const lgu = report.LGU.toUpperCase();
+            if (filters.Region && !lgu.includes(filters.Region.toUpperCase())) return false;
+            if (filters.Province && !lgu.includes(filters.Province.toUpperCase())) return false;
+            if (filters['Municipality/City'] && !lgu.includes(filters['Municipality/City'].toUpperCase())) return false;
+
+            // If it passed all active checks, keep it
+            return true;
+        });
+
+        // Return the group containing only matching children
+        return { ...group, reports: filteredChildren };
+        
+    }).filter(group => group.reports.length > 0); 
+});
 
 const router = useRouter();
 
-// Update: Pass the categoryTitle to pass into URL parameters
 const handleRowClick = (item: reportDetails, categoryTitle: string) => {
     router.push({
         path: `${router.currentRoute.value.path}/${item.id}`,
         query: { category: categoryTitle, name: item.name }
     });
-}   
+}
 
 </script>
