@@ -1,13 +1,25 @@
 <template>
   <div class="w-full overflow-hidden p-6">
-    <div
-        v-if="selectedReport" 
-        class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-xs font-sans"
-        @click.self="closeReport"
+    <transition
+      enter-active-class="transition-all duration-300 ease-out"
+      enter-from-class="opacity-0 translate-y-10"
+      enter-to-class="opacity-100 translate-y-0"
+      leave-active-class="transition-all duration-200 ease-in"
+      leave-from-class="opacity-100 translate-y-0"
+      leave-to-class="opacity-0 translate-y-10"
     >
-        <ReportDetails 
-            :data="selectedReport"
-        />
+      <div
+          v-if="selectedReport" 
+          class="fixed -inset-y-16 inset-x-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-xs font-sans"
+          @click.self="closeReport"
+      > 
+        <button class="group absolute p-2 z-100 rounded-full top-24 right-10 hover:bg-slate-800 cursor-pointer" @click="closeReport">
+          <XIcon class="size-10 text-cyan-gr-end group-hover:text-cyan-gr-start" />
+        </button>
+        <img :src="BackgroundFolder" class="absolute w-1/2" @click.stop />
+        <ReportDetails class="relative" :data="selectedReport"  />
+      </div>
+    </transition>
     </div>
 
     <!-- Breadcrumbs Navigation -->
@@ -46,7 +58,6 @@
             </button>
         </section>
     </div>
-  </div>
 </template>
 
 <script setup lang="ts">
@@ -61,6 +72,9 @@ const router = useRouter()
 import FolderGray from '../assets/Folder_gray.png'
 import FolderCyan from '../assets/Folder_cyan.png'
 import FolderRed from '../assets/Folder_red.png'
+
+import BackgroundFolder from '../assets/BackgroundFolderLandscape.png'
+import { XIcon } from '@lucide/vue'
 
 const folderColor = (status: string) => {
     if (status === 'pass') { return FolderCyan }
