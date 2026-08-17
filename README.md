@@ -63,7 +63,7 @@ VITE_GEMINI_API_KEY=YOUR GEMINI API KEY
 *Place your .env file in the same folder as App.vue*
 
 #### Using the Python Engine
-> Refer to the python_engine_README file
+> Refer to the [python_engine_README](https://github.com/RiceCell/SugboKlaro/blob/main/python_engine_README.pdf) file
 
 #### Compile and Hot-Reload for Development
 
