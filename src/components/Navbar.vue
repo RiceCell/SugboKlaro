@@ -15,6 +15,12 @@
             active-class="bg-linear-to-br from-cyan-gr-start to-cyan-gr-end bg-clip-text text-transparent underline underline-offset-5">
             Reports
         </RouterLink>
+
+        <RouterLink to="/about" 
+            class="text-xl transition-colors hover:text-cyan-500" 
+            active-class="bg-linear-to-br from-cyan-gr-start to-cyan-gr-end bg-clip-text text-transparent underline underline-offset-5">
+            About the Project
+        </RouterLink>
     </section>    
 </template>
 

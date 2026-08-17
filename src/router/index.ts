@@ -3,6 +3,7 @@ import Landing from '../views/Landing.vue'
 import HomeView from '../views/HomeView.vue'
 import ReportsView from '../views/ReportsView.vue'
 import SpecificReportView from '../views/SpecificReportView.vue'
+import AboutView from '../views/AboutView.vue'
 
 const routes: RouteRecordRaw[] = [
   {
@@ -26,6 +27,11 @@ const routes: RouteRecordRaw[] = [
     name: 'specificReport',
     component: SpecificReportView,
     props: true
+  },
+  {
+    path: '/about',
+    name: 'About',
+    component: AboutView
   }
 ]
 
