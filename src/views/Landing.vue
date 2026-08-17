@@ -751,12 +751,11 @@ const backgroundStyle = computed(() => {
               <img src="/SugboKlaroLogo_dark.png" class="w-48 object-contain"/>
 
               <p class="mt-4 text-slate-300">
-                The quick brown fox jumps over the lazy dog
+                Automated Transparency for your city
               </p>
 
               <p class="mb-6 mt-2 text-sm text-slate-400">
-                The quick brown fox jumps over the lazy dog
-                the quick brown fox jumps over the lazy dog
+                SugboKlaro acts as your digital auditor, translating reports in accordance to the Full Disclosure Policy by analyzing budget, procurement and other reports by using Philippine Law and AI
               </p>
 
               <!-- BUTTON -->
