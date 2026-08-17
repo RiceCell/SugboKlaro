@@ -17,7 +17,7 @@
       <input 
         v-model="searchQuery" 
         type="text" 
-        placeholder="Search me, babes" 
+        placeholder="Search reports and documents", 
         class="w-full px-5 py-3 rounded-full bg-white/10 border border-sky-300/30 text-white placeholder-sky-200/50 backdrop-blur-md focus:outline-none focus:border-sky-300 focus:ring-2 focus:ring-sky-300/50 transition-all shadow-lg"
       />
     </div>
