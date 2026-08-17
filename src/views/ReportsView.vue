@@ -19,7 +19,7 @@
                     </thead>
 
                     <tbody class="divide-y divide-slate-700">
-                        <tr v-for="(r, i) in rL.reports" :key="i" @click="handleRowClick(r)" class="hover:bg-slate-700/40 transition-colors cursor-pointer">
+                        <tr v-for="(r, i) in rL.reports" :key="i" @click="handleRowClick(r, rL.title)" class="hover:bg-slate-700/40 transition-colors cursor-pointer">
                             <td class="px-4 py-2 wrap-break-word font-light">{{ r.name }}</td>
                             <td class="px-4 py-2 wrap-break-word font-light">{{ r.LGU }}</td>
                             <td class="px-4 py-2 wrap-break-word font-light">{{ r.posting_year }}</td>
@@ -27,7 +27,8 @@
                             
                             <td v-if="r.download_link" class="px-4 py-2">
                                 <div class="flex items-center gap-2">
-                                    <a v-if="r.download_link !== 'N/A'" :href="`https://view.officeapps.live.com/op/view.aspx?src=${encodeURIComponent(r.download_link)}`" 
+                                    <!-- Eye Button (View in Browser via Office Web Viewer) -->
+                                    <a :href="`https://view.officeapps.live.com/op/view.aspx?src=${encodeURIComponent(r.download_link)}`" 
                                         target="_blank" 
                                         rel="noopener noreferrer" 
                                         @click.stop
@@ -36,7 +37,8 @@
                                         <Eye class="size-4.5" />
                                     </a>
                                     
-                                    <a v-if="r.download_link !== 'N/A'" :href="r.download_link" @click.stop
+                                    <!-- Download Button -->
+                                    <a :href="r.download_link" @click.stop
                                         class="inline-flex items-center justify-center min-w-8 w-8 h-8 bg-white rounded-lg text-slate-700 hover:bg-slate-200 transition-colors shadow-sm"
                                         title="Download File">
                                         <Download class="size-4.5" />
@@ -56,8 +58,9 @@
 </template>
 
 <script setup lang="ts">
+// NEW: Imported the 'Eye' icon from lucide
 import { Download, Eye } from '@lucide/vue';
-import { ref, computed} from 'vue';
+import { ref } from 'vue';
 import Filter from '../components/Filter.vue';
 import { useRouter } from 'vue-router';
 
@@ -235,8 +238,12 @@ const filteredReportsList = computed(() => {
 
 const router = useRouter();
 
-const handleRowClick = (item: reportDetails) => {
-    console.log('Row clicked: ', item);
-    router.push(`${router.currentRoute.value.path}/${item.id}`)
+// Update: Pass the categoryTitle to pass into URL parameters
+const handleRowClick = (item: reportDetails, categoryTitle: string) => {
+    router.push({
+        path: `${router.currentRoute.value.path}/${item.id}`,
+        query: { category: categoryTitle, name: item.name }
+    });
 }   
+
 </script>

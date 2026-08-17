@@ -8,28 +8,32 @@
       leave-from-class="opacity-100 translate-y-0"
       leave-to-class="opacity-0 translate-y-10"
     >
-      <div
-          v-if="selectedReport" 
-          class="fixed -inset-y-16 inset-x-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-xs font-sans"
-          @click.self="closeReport"
-      > 
-        <button class="group absolute p-2 z-100 rounded-full top-24 right-10 hover:bg-slate-800 cursor-pointer" @click="closeReport">
-          <XIcon class="size-10 text-cyan-gr-end group-hover:text-cyan-gr-start" />
-        </button>
-        <img :src="BackgroundFolder" class="absolute w-1/2" @click.stop />
-        <ReportDetails class="relative" :data="selectedReport"  />
-      </div>
-    </transition>
-    
-    <span  @click="router.push('/reports')" class="cursor-pointer">Report Details for ID: {{ id }}</span>
+        <ReportDetails 
+            :data="selectedReport"
+        />
+    </div>
+
+    <!-- Breadcrumbs Navigation -->
+    <nav class="mb-6 flex items-center gap-2 text-sm text-slate-300 font-medium">
+        <span 
+            @click="router.push('/reports')" 
+            class="cursor-pointer hover:text-white transition-colors uppercase"
+        >
+            {{ reportCategory }}
+        </span>
+        <span>&gt;</span>
+        <span class="text-white">
+            {{ reportName }} - {{ id }}
+        </span>
+    </nav>
 
     <div v-if="loading">Loading report data...</div>
     <div v-else-if="error" class="text-red-500">{{ error }}</div>
     <div v-else-if="reportData" class="w-full p-5">
         
         <section class="grid grid-cols-4 gap-8 px-5">
-            <button @click="openReport(r)"
-                v-for="(r, i) in reportData.results" :key="i"
+            <button @click="openReport(r)" 
+                v-for="(r, index) in reportData.results" :key="index"
                 class="p-2 pt-6 flex flex-col items-center gap-3 rounded-2xl transition-colors group hover:bg-slate-800 cursor-pointer">
                 <img :src="folderColor(r.status)" class="w-1/2 transition-all group-hover:scale-110 group-hover:-rotate-2" />
 
@@ -73,6 +77,10 @@ const folderColor = (status: string) => {
 const props = defineProps<{
   id: string
 }>()
+
+// Computed properties mapping to query parameters
+const reportCategory = computed(() => route.query.category ? String(route.query.category) : 'Reports');
+const reportName = computed(() => route.query.name ? String(route.query.name) : 'Report Details');
 
 const reportData = ref<any>(null)
 const loading = ref(true)
