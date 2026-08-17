@@ -24,21 +24,27 @@
                             <td class="px-4 py-2 wrap-break-word font-light">{{ r.posting_year }}</td>
                             <td class="px-4 py-2 wrap-break-word font-light">{{ r.posting_quarter }}</td>
                             
-                            <td v-if="r.download_link" class="px-4 py-2">
+                            <td class="px-4 py-2">
                                 <div class="flex items-center gap-2">
-                                    <!-- Eye Button (View in Browser via Office Web Viewer) -->
-                                    <a :href="`https://view.officeapps.live.com/op/view.aspx?src=${encodeURIComponent(r.download_link)}`" 
-                                        target="_blank" 
-                                        rel="noopener noreferrer" 
+                                    <!-- Eye Button -->
+                                    <a :href="isValidLink(r.download_link) ? `https://view.officeapps.live.com/op/view.aspx?src=${encodeURIComponent(r.download_link || '')}` : undefined" 
+                                        :target="isValidLink(r.download_link) ? '_blank' : undefined" 
                                         @click.stop
-                                        class="inline-flex items-center justify-center min-w-8 w-8 h-8 bg-white rounded-lg text-slate-700 hover:bg-slate-200 transition-colors shadow-sm"
+                                        :class="[
+                                            'inline-flex items-center justify-center min-w-8 w-8 h-8 rounded-lg shadow-sm transition-colors',
+                                            isValidLink(r.download_link) ? 'bg-white text-slate-700 hover:bg-slate-200' : 'bg-slate-700/50 text-slate-500 cursor-not-allowed'
+                                        ]"
                                         title="View in Browser">
                                         <Eye class="size-4.5" />
                                     </a>
                                     
                                     <!-- Download Button -->
-                                    <a :href="r.download_link" @click.stop
-                                        class="inline-flex items-center justify-center min-w-8 w-8 h-8 bg-white rounded-lg text-slate-700 hover:bg-slate-200 transition-colors shadow-sm"
+                                    <a :href="isValidLink(r.download_link) ? r.download_link : undefined" 
+                                        @click.stop
+                                        :class="[
+                                            'inline-flex items-center justify-center min-w-8 w-8 h-8 rounded-lg shadow-sm transition-colors',
+                                            isValidLink(r.download_link) ? 'bg-white text-slate-700 hover:bg-slate-200' : 'bg-slate-700/50 text-slate-500 cursor-not-allowed'
+                                        ]"
                                         title="Download File">
                                         <Download class="size-4.5" />
                                     </a>
@@ -71,6 +77,10 @@ interface reportDetails {
 interface reportGroup {
     title: string;
     reports: reportDetails[];
+};
+
+const isValidLink = (link?: string) => {
+    return link && link !== 'N/A';
 };
 
 const reportsList = ref<reportGroup[]>([
