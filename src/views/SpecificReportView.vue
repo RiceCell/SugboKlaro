@@ -1,12 +1,9 @@
 <template>
   <div class="w-full overflow-hidden p-6">
-    <transition
-      enter-active-class="transition-all duration-300 ease-out"
-      enter-from-class="opacity-0 translate-y-10"
-      enter-to-class="opacity-100 translate-y-0"
-      leave-active-class="transition-all duration-200 ease-in"
-      leave-from-class="opacity-100 translate-y-0"
-      leave-to-class="opacity-0 translate-y-10"
+    <div
+        v-if="selectedReport" 
+        class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-xs font-sans"
+        @click.self="closeReport"
     >
         <ReportDetails 
             :data="selectedReport"
@@ -64,9 +61,6 @@ const router = useRouter()
 import FolderGray from '../assets/Folder_gray.png'
 import FolderCyan from '../assets/Folder_cyan.png'
 import FolderRed from '../assets/Folder_red.png'
-
-import BackgroundFolder from '../assets/BackgroundFolderLandscape.png'
-import { XIcon } from '@lucide/vue'
 
 const folderColor = (status: string) => {
     if (status === 'pass') { return FolderCyan }

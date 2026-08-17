@@ -1,13 +1,12 @@
 <template>
     <main class="p-8 text-slate-100 flex flex-col gap-10">
-        <Filter @apply="handleFilters" />
-        
-        <div v-for="(rL, index) in filteredReportsList" :key="index">
+        <Filter />
+        <div v-for="(rL, index) in reportsList" :key="index">
+            <!-- Styled the title -->
             <h1 class="text-2xl font-bold mb-2 text-white uppercase">{{ rL.title }}</h1>
             
             <div class="overflow-hidden border border-slate-700 shadow-md bg-slate-800/50">
                 <table class="w-full table-fixed text-left border-collapse">
-
                     <thead class="bg-slate-700 text-slate-200">
                         <tr>
                             <th class="w-35/100 px-4 py-2 font-semibold">Name</th>
@@ -49,10 +48,6 @@
                     </tbody>
                 </table>
             </div>
-        </div>
-
-        <div v-if="filteredReportsList.length === 0" class="text-center text-slate-400 py-10">
-            No reports match your selected filters.
         </div>
     </main>
 </template>
@@ -193,48 +188,6 @@ const reportsList = ref<reportGroup[]>([
     ]
 },
 ])
-const activeFilters = ref<Record<string, string>>({});
-
-const handleFilters = (filters: Record<string, string>) => {
-    activeFilters.value = filters;
-};
-
-const filteredReportsList = computed(() => {
-    const filters = activeFilters.value;
-    
-    // If no filters are selected, return the original data entirely
-    if (Object.keys(filters).length === 0) return reportsList.value;
-
-    return reportsList.value.map(group => {
-        // Filter at the Group Level (Budget vs Procurement)
-        if (filters.Report && group.title !== filters.Report) {
-            // Return empty reports if group title doesn't match
-            return { ...group, reports: [] };
-        }
-
-        // Filter at the individual report level
-        const filteredChildren = group.reports.filter(report => {
-            
-            // Check Document type
-            if (filters.Document && report.name !== filters.Document) return false;
-            
-            // Check Year
-            if (filters.Year && report.posting_year !== filters.Year) return false;
-
-            const lgu = report.LGU.toUpperCase();
-            if (filters.Region && !lgu.includes(filters.Region.toUpperCase())) return false;
-            if (filters.Province && !lgu.includes(filters.Province.toUpperCase())) return false;
-            if (filters['Municipality/City'] && !lgu.includes(filters['Municipality/City'].toUpperCase())) return false;
-
-            // If it passed all active checks, keep it
-            return true;
-        });
-
-        // Return the group containing only matching children
-        return { ...group, reports: filteredChildren };
-        
-    }).filter(group => group.reports.length > 0); 
-});
 
 const router = useRouter();
 
