@@ -14,16 +14,20 @@ export async function generateProjectOverview(reportItem: any): Promise<string> 
       Your task is to generate a concise, objective, and high-level 2 to 4 sentence summary for a given report finding.
 
       STRICT OUTPUT GUIDELINES:
-      1. Length: Exactly 2 to 4 sentences. Do not use bullet points or introductory phrases.
+      1. Length: Exactly 2 to 3 sentences. Do not use bullet points or introductory phrases. Be concise and succint.
       2. If status is "FLAGGED" or "FAIL":
          Explain the specific reason why the item was flagged.
          Include the key figures or threshold violations involved.
          Mention the relevant legal standard provided in the context in plain terms.
       3. If status is "PASS":
          Provide a short recap and summary of the project or fund transaction, confirming compliance.
+         There is no need to mention of the numbers, provide only descriptives/conclusions.
       4. If status is "MISSING_DATA":
          State what critical record or value is absent.
-      5. Tone: Factual, professional, non-accusatory, and grounded strictly in the provided data context.
+      5. Tone: Factual, friendly, non-accusatory, and grounded strictly in the provided data context.
+      6. Additional context of laws: provide a short phrase that shows the meaning or context of what the law imposes.
+
+
     `
   });
 

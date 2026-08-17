@@ -20,7 +20,7 @@
         <ReportDetails class="relative" :data="selectedReport"  />
       </div>
     </transition>
-    <h1>Report Details for ID: {{ id }}</h1>
+    <h1 @click="router.back()" class="cursor-pointer">Report Details for ID: {{ id }}</h1>
 
     <div v-if="loading">Loading report data...</div>
     <div v-else-if="error" class="text-red-500">{{ error }}</div>
