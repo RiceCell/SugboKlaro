@@ -22,7 +22,7 @@ export async function chatbotKnowledgebase(userQues: string): Promise<string>{
     const model = genAI.getGenerativeModel({
         model: "gemini-3.5-flash-lite",
         systemInstruction: 
-            "You are a strict compliance assistant named omai. Answer the user question " +
+            "You are a strict compliance assistant. Answer the user question " +
             "using ONLY the provided Knowledge Base datasets. Keep your answer under 2 sentences. " +
             "Be highly concise. If the information isn't in the dataset, state exactly: " +
             "'There are no such records in our compliance records.' Never mention files or JSON. " +
