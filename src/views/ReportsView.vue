@@ -11,9 +11,9 @@
                         <tr>
                             <th class="w-35/100 px-4 py-2 font-semibold">Name</th>
                             <th class="w-35/100 px-4 py-2 font-semibold">LGU</th>
-                            <th class="w-13/100 px-4 py-2 font-semibold">Year</th>
-                            <th class="w-12/100 px-4 py-2 font-semibold">Quarter</th>
-                            <th class="w-5/100 px-4 py-2 font-semibold"></th>
+                            <th class="w-12/100 px-4 py-2 font-semibold">Year</th>
+                            <th class="w-8/100 px-2 py-2 font-semibold">Quarter</th>
+                            <th class="w-10/100 px-4 py-2 font-semibold"></th>
                         </tr>
                     </thead>
 
@@ -25,10 +25,24 @@
                             <td class="px-4 py-2 wrap-break-word font-light">{{ r.posting_quarter }}</td>
                             
                             <td v-if="r.download_link" class="px-4 py-2">
-                                <a :href="r.download_link" @click.stop
-                                    class="inline-flex items-center justify-center w-8 h-8 bg-white rounded-lg text-slate-700 hover:bg-slate-200 transition-colors shadow-sm">
-                                    <Download class="size-4.5" />
-                                </a>
+                                <div class="flex items-center gap-2">
+                                    <!-- Eye Button (View in Browser via Office Web Viewer) -->
+                                    <a :href="`https://view.officeapps.live.com/op/view.aspx?src=${encodeURIComponent(r.download_link)}`" 
+                                        target="_blank" 
+                                        rel="noopener noreferrer" 
+                                        @click.stop
+                                        class="inline-flex items-center justify-center min-w-8 w-8 h-8 bg-white rounded-lg text-slate-700 hover:bg-slate-200 transition-colors shadow-sm"
+                                        title="View in Browser">
+                                        <Eye class="size-4.5" />
+                                    </a>
+                                    
+                                    <!-- Download Button -->
+                                    <a :href="r.download_link" @click.stop
+                                        class="inline-flex items-center justify-center min-w-8 w-8 h-8 bg-white rounded-lg text-slate-700 hover:bg-slate-200 transition-colors shadow-sm"
+                                        title="Download File">
+                                        <Download class="size-4.5" />
+                                    </a>
+                                </div>
                             </td>
                         </tr>
                     </tbody>
@@ -39,7 +53,8 @@
 </template>
 
 <script setup lang="ts">
-import { Download } from '@lucide/vue';
+// NEW: Imported the 'Eye' icon from lucide
+import { Download, Eye } from '@lucide/vue';
 import { ref } from 'vue';
 import Filter from '../components/Filter.vue';
 import { useRouter } from 'vue-router';
