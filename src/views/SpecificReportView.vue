@@ -9,10 +9,20 @@
             :data="selectedReport"
         />
     </div>
-    <h1 @click="router.back()" style="cursor: pointer;">
-      Report Details for ID: {{ id }} >
-  </h1>
 
+    <!-- Breadcrumbs Navigation -->
+    <nav class="mb-6 flex items-center gap-2 text-sm text-slate-300 font-medium">
+        <span 
+            @click="router.push('/reports')" 
+            class="cursor-pointer hover:text-white transition-colors uppercase"
+        >
+            {{ reportCategory }}
+        </span>
+        <span>&gt;</span>
+        <span class="text-white">
+            {{ reportName }} - {{ id }}
+        </span>
+    </nav>
 
     <div v-if="loading">Loading report data...</div>
     <div v-else-if="error" class="text-red-500">{{ error }}</div>
@@ -20,7 +30,7 @@
         
         <section class="grid grid-cols-4 gap-8 px-5">
             <button @click="openReport(r)" 
-                v-for="r in reportData.results"
+                v-for="(r, index) in reportData.results" :key="index"
                 class="p-2 pt-6 flex flex-col items-center gap-3 rounded-2xl transition-colors group hover:bg-slate-800 cursor-pointer">
                 <img :src="folderColor(r.status)" class="w-1/2 transition-all group-hover:scale-110 group-hover:-rotate-2" />
 
@@ -61,6 +71,10 @@ const folderColor = (status: string) => {
 const props = defineProps<{
   id: string
 }>()
+
+// Computed properties mapping to query parameters
+const reportCategory = computed(() => route.query.category ? String(route.query.category) : 'Reports');
+const reportName = computed(() => route.query.name ? String(route.query.name) : 'Report Details');
 
 const reportData = ref<any>(null)
 const loading = ref(true)
