@@ -1,12 +1,13 @@
 <template>
     <main class="p-8 text-slate-100 flex flex-col gap-10">
-        <Filter />
-        <div v-for="(rL, index) in reportsList" :key="index">
-            <!-- Styled the title -->
+        <Filter @apply="handleFilters" />
+        
+        <div v-for="(rL, index) in filteredReportsList" :key="index">
             <h1 class="text-2xl font-bold mb-2 text-white uppercase">{{ rL.title }}</h1>
             
             <div class="overflow-hidden border border-slate-700 shadow-md bg-slate-800/50">
                 <table class="w-full table-fixed text-left border-collapse">
+
                     <thead class="bg-slate-700 text-slate-200">
                         <tr>
                             <th class="w-35/100 px-4 py-2 font-semibold">Name</th>
@@ -18,7 +19,7 @@
                     </thead>
 
                     <tbody class="divide-y divide-slate-700">
-                        <tr v-for="(r, i)  in rL.reports" :key="i" @click="handleRowClick(r)" class="hover:bg-slate-700/40 transition-colors cursor-pointer">
+                        <tr v-for="(r, i) in rL.reports" :key="i" @click="handleRowClick(r)" class="hover:bg-slate-700/40 transition-colors cursor-pointer">
                             <td class="px-4 py-2 wrap-break-word font-light">{{ r.name }}</td>
                             <td class="px-4 py-2 wrap-break-word font-light">{{ r.LGU }}</td>
                             <td class="px-4 py-2 wrap-break-word font-light">{{ r.posting_year }}</td>
@@ -26,8 +27,7 @@
                             
                             <td v-if="r.download_link" class="px-4 py-2">
                                 <div class="flex items-center gap-2">
-                                    <!-- Eye Button (View in Browser via Office Web Viewer) -->
-                                    <a :href="`https://view.officeapps.live.com/op/view.aspx?src=${encodeURIComponent(r.download_link)}`" 
+                                    <a v-if="r.download_link !== 'N/A'" :href="`https://view.officeapps.live.com/op/view.aspx?src=${encodeURIComponent(r.download_link)}`" 
                                         target="_blank" 
                                         rel="noopener noreferrer" 
                                         @click.stop
@@ -36,8 +36,7 @@
                                         <Eye class="size-4.5" />
                                     </a>
                                     
-                                    <!-- Download Button -->
-                                    <a :href="r.download_link" @click.stop
+                                    <a v-if="r.download_link !== 'N/A'" :href="r.download_link" @click.stop
                                         class="inline-flex items-center justify-center min-w-8 w-8 h-8 bg-white rounded-lg text-slate-700 hover:bg-slate-200 transition-colors shadow-sm"
                                         title="Download File">
                                         <Download class="size-4.5" />
@@ -49,13 +48,16 @@
                 </table>
             </div>
         </div>
+
+        <div v-if="filteredReportsList.length === 0" class="text-center text-slate-400 py-10">
+            No reports match your selected filters.
+        </div>
     </main>
 </template>
 
 <script setup lang="ts">
-// NEW: Imported the 'Eye' icon from lucide
 import { Download, Eye } from '@lucide/vue';
-import { ref } from 'vue';
+import { ref, computed} from 'vue';
 import Filter from '../components/Filter.vue';
 import { useRouter } from 'vue-router';
 
@@ -188,6 +190,48 @@ const reportsList = ref<reportGroup[]>([
     ]
 },
 ])
+const activeFilters = ref<Record<string, string>>({});
+
+const handleFilters = (filters: Record<string, string>) => {
+    activeFilters.value = filters;
+};
+
+const filteredReportsList = computed(() => {
+    const filters = activeFilters.value;
+    
+    // If no filters are selected, return the original data entirely
+    if (Object.keys(filters).length === 0) return reportsList.value;
+
+    return reportsList.value.map(group => {
+        // Filter at the Group Level (Budget vs Procurement)
+        if (filters.Report && group.title !== filters.Report) {
+            // Return empty reports if group title doesn't match
+            return { ...group, reports: [] };
+        }
+
+        // Filter at the individual report level
+        const filteredChildren = group.reports.filter(report => {
+            
+            // Check Document type
+            if (filters.Document && report.name !== filters.Document) return false;
+            
+            // Check Year
+            if (filters.Year && report.posting_year !== filters.Year) return false;
+
+            const lgu = report.LGU.toUpperCase();
+            if (filters.Region && !lgu.includes(filters.Region.toUpperCase())) return false;
+            if (filters.Province && !lgu.includes(filters.Province.toUpperCase())) return false;
+            if (filters['Municipality/City'] && !lgu.includes(filters['Municipality/City'].toUpperCase())) return false;
+
+            // If it passed all active checks, keep it
+            return true;
+        });
+
+        // Return the group containing only matching children
+        return { ...group, reports: filteredChildren };
+        
+    }).filter(group => group.reports.length > 0); 
+});
 
 const router = useRouter();
 
