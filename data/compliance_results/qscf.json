@@ -1,0 +1,265 @@
+{
+  "doc_type": "QSCF",
+  "row_count": 4,
+  "results": [
+    {
+      "rule_id": "BUD-001",
+      "status": "pass",
+      "message": "Total Inflow − Total Outflow matches stated Net Cash from Operating Activities",
+      "legal_basis": {
+        "law": "BLGF Memorandum Circular No. 09-2012",
+        "section": "Annex 2",
+        "title": "Statement of Cash Flows Format and Guidelines"
+      },
+      "row_ref": "COMBINED",
+      "details": {
+        "fund_type": "COMBINED",
+        "total_cash_inflow": 1060079147,
+        "total_cash_outflow": 1427755884,
+        "stated_net_operating": -367676737.6,
+        "computed_net_operating": -367676737
+      }
+    },
+    {
+      "rule_id": "BUD-001",
+      "status": "pass",
+      "message": "Total Inflow − Total Outflow matches stated Net Cash from Operating Activities",
+      "legal_basis": {
+        "law": "BLGF Memorandum Circular No. 09-2012",
+        "section": "Annex 2",
+        "title": "Statement of Cash Flows Format and Guidelines"
+      },
+      "row_ref": "GEN FUND",
+      "details": {
+        "fund_type": "GEN FUND",
+        "total_cash_inflow": 919709137,
+        "total_cash_outflow": 1269806852,
+        "stated_net_operating": -350097714.9,
+        "computed_net_operating": -350097715
+      }
+    },
+    {
+      "rule_id": "BUD-001",
+      "status": "pass",
+      "message": "Total Inflow − Total Outflow matches stated Net Cash from Operating Activities",
+      "legal_basis": {
+        "law": "BLGF Memorandum Circular No. 09-2012",
+        "section": "Annex 2",
+        "title": "Statement of Cash Flows Format and Guidelines"
+      },
+      "row_ref": "SEF",
+      "details": {
+        "fund_type": "SEF",
+        "total_cash_inflow": 114109094.7,
+        "total_cash_outflow": 10110784.43,
+        "stated_net_operating": 103998310.3,
+        "computed_net_operating": 103998310.27000001
+      }
+    },
+    {
+      "rule_id": "BUD-001",
+      "status": "pass",
+      "message": "Total Inflow − Total Outflow matches stated Net Cash from Operating Activities",
+      "legal_basis": {
+        "law": "BLGF Memorandum Circular No. 09-2012",
+        "section": "Annex 2",
+        "title": "Statement of Cash Flows Format and Guidelines"
+      },
+      "row_ref": "TRUST FUND",
+      "details": {
+        "fund_type": "TRUST FUND",
+        "total_cash_inflow": 26260915.04,
+        "total_cash_outflow": 147838248,
+        "stated_net_operating": -121577333,
+        "computed_net_operating": -121577332.96000001
+      }
+    },
+    {
+      "rule_id": "BUD-002",
+      "status": "pass",
+      "message": "Net Operating + Net Investing matches stated Net Increase in Cash",
+      "legal_basis": {
+        "law": "BLGF Memorandum Circular No. 09-2012",
+        "section": "Annex 2",
+        "title": "Statement of Cash Flows Format and Guidelines"
+      },
+      "row_ref": "COMBINED",
+      "details": {
+        "fund_type": "COMBINED",
+        "net_cash_operating": -367676737.6,
+        "net_cash_investing": 0,
+        "stated_net_increase": -367676737.6,
+        "computed_net_increase": -367676737.6
+      }
+    },
+    {
+      "rule_id": "BUD-002",
+      "status": "pass",
+      "message": "Net Operating + Net Investing matches stated Net Increase in Cash",
+      "legal_basis": {
+        "law": "BLGF Memorandum Circular No. 09-2012",
+        "section": "Annex 2",
+        "title": "Statement of Cash Flows Format and Guidelines"
+      },
+      "row_ref": "GEN FUND",
+      "details": {
+        "fund_type": "GEN FUND",
+        "net_cash_operating": -350097714.9,
+        "net_cash_investing": 0,
+        "stated_net_increase": -350097714.9,
+        "computed_net_increase": -350097714.9
+      }
+    },
+    {
+      "rule_id": "BUD-002",
+      "status": "pass",
+      "message": "Net Operating + Net Investing matches stated Net Increase in Cash",
+      "legal_basis": {
+        "law": "BLGF Memorandum Circular No. 09-2012",
+        "section": "Annex 2",
+        "title": "Statement of Cash Flows Format and Guidelines"
+      },
+      "row_ref": "SEF",
+      "details": {
+        "fund_type": "SEF",
+        "net_cash_operating": 103998310.3,
+        "net_cash_investing": 0,
+        "stated_net_increase": 103998310.3,
+        "computed_net_increase": 103998310.3
+      }
+    },
+    {
+      "rule_id": "BUD-002",
+      "status": "pass",
+      "message": "Net Operating + Net Investing matches stated Net Increase in Cash",
+      "legal_basis": {
+        "law": "BLGF Memorandum Circular No. 09-2012",
+        "section": "Annex 2",
+        "title": "Statement of Cash Flows Format and Guidelines"
+      },
+      "row_ref": "TRUST FUND",
+      "details": {
+        "fund_type": "TRUST FUND",
+        "net_cash_operating": -121577333,
+        "net_cash_investing": 0,
+        "stated_net_increase": -121577333,
+        "computed_net_increase": -121577333
+      }
+    },
+    {
+      "rule_id": "BUD-003",
+      "status": "pass",
+      "message": "Beginning Balance + Net Increase matches stated Ending Balance",
+      "legal_basis": {
+        "law": "BLGF Memorandum Circular No. 09-2012",
+        "section": "Annex 2",
+        "title": "Statement of Cash Flows Format and Guidelines"
+      },
+      "row_ref": "COMBINED",
+      "details": {
+        "fund_type": "COMBINED",
+        "beginning_balance": 9394545011,
+        "net_increase_cash": -367676737.6,
+        "stated_ending_balance": 9026868274,
+        "computed_ending_balance": 9026868273.4
+      }
+    },
+    {
+      "rule_id": "BUD-003",
+      "status": "pass",
+      "message": "Beginning Balance + Net Increase matches stated Ending Balance",
+      "legal_basis": {
+        "law": "BLGF Memorandum Circular No. 09-2012",
+        "section": "Annex 2",
+        "title": "Statement of Cash Flows Format and Guidelines"
+      },
+      "row_ref": "GEN FUND",
+      "details": {
+        "fund_type": "GEN FUND",
+        "beginning_balance": 4980698003.14,
+        "net_increase_cash": -350097714.9,
+        "stated_ending_balance": 4630600288,
+        "computed_ending_balance": 4630600288.240001
+      }
+    },
+    {
+      "rule_id": "BUD-003",
+      "status": "pass",
+      "message": "Beginning Balance + Net Increase matches stated Ending Balance",
+      "legal_basis": {
+        "law": "BLGF Memorandum Circular No. 09-2012",
+        "section": "Annex 2",
+        "title": "Statement of Cash Flows Format and Guidelines"
+      },
+      "row_ref": "SEF",
+      "details": {
+        "fund_type": "SEF",
+        "beginning_balance": 2232715721.03,
+        "net_increase_cash": 103998310.3,
+        "stated_ending_balance": 2336714031,
+        "computed_ending_balance": 2336714031.3300004
+      }
+    },
+    {
+      "rule_id": "BUD-003",
+      "status": "pass",
+      "message": "Beginning Balance + Net Increase matches stated Ending Balance",
+      "legal_basis": {
+        "law": "BLGF Memorandum Circular No. 09-2012",
+        "section": "Annex 2",
+        "title": "Statement of Cash Flows Format and Guidelines"
+      },
+      "row_ref": "TRUST FUND",
+      "details": {
+        "fund_type": "TRUST FUND",
+        "beginning_balance": 2181131286.97,
+        "net_increase_cash": -121577333,
+        "stated_ending_balance": 2059553954,
+        "computed_ending_balance": 2059553953.9699998
+      }
+    },
+    {
+      "rule_id": "BUD-004",
+      "status": "pass",
+      "message": "COMBINED Total Cash Inflow matches the sum of GEN FUND + SEF + TRUST FUND",
+      "legal_basis": {
+        "law": "BLGF Memorandum Circular No. 09-2012",
+        "section": "Annex 2",
+        "title": "Statement of Cash Flows Format and Guidelines"
+      },
+      "row_ref": null,
+      "details": {
+        "field": "total_cash_inflow",
+        "combined_stated": 1060079147,
+        "gen_fund": 919709137,
+        "sef": 114109094.7,
+        "trust_fund": 26260915.04,
+        "sum_of_funds": 1060079146.74
+      }
+    },
+    {
+      "rule_id": "BUD-004",
+      "status": "pass",
+      "message": "COMBINED Total Cash Outflow matches the sum of GEN FUND + SEF + TRUST FUND",
+      "legal_basis": {
+        "law": "BLGF Memorandum Circular No. 09-2012",
+        "section": "Annex 2",
+        "title": "Statement of Cash Flows Format and Guidelines"
+      },
+      "row_ref": null,
+      "details": {
+        "field": "total_cash_outflow",
+        "combined_stated": 1427755884,
+        "gen_fund": 1269806852,
+        "sef": 10110784.43,
+        "trust_fund": 147838248,
+        "sum_of_funds": 1427755884.43
+      }
+    }
+  ],
+  "summary": {
+    "pass": 14,
+    "flagged": 0,
+    "missing_data": 0
+  }
+}
