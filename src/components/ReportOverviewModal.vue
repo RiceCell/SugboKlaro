@@ -73,7 +73,7 @@
 
           <!-- Loading State -->
           <div v-if="isLoading" class="py-4 flex flex-col items-center justify-center gap-3">
-            <div class="w-6 h-6 border-2 border-sky-400 border-t-transparent rounded-full animate-spin"></div>
+            <div class="w-6 h-6 border-2 border-cyan-gr-start border-t-transparent rounded-full animate-spin"></div>
             <p class="text-xs text-slate-300 animate-pulse m-0">Generating AI compliance summary...</p>
           </div>
 
