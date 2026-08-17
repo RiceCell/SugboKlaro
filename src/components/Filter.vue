@@ -1,5 +1,5 @@
 <template>
-    <div class="fixed top-6 right-6 z-50">
+    <div class="fixed top-6 right-6 z-50" >
         <Transition name="filter">
             <div class="absolute top-14 right-0 w-[370px] rounded-xl border border-gray-200 bg-white shadow-lg"
                 v-if="showFilter">
@@ -17,7 +17,7 @@
                 </div>
 
                 <!-- Filters -->
-                <div class="space-y-3 p-4">
+                <div class="custom-scrollbar space-y-3 p-4 max-h-[60vh] overflow-y-auto">
                     <div v-for="filter in filters"
                         :key="filter"
                     >
@@ -77,7 +77,7 @@
                     </button>
 
                     <button
-                        @click="showFilter = false"
+                        @click="applyFilters"
                         type="button"
                         class="rounded-lg bg-blue-600 px-4 py-2 text-xs font-medium text-white hover:bg-blue-700"
                     >
@@ -111,6 +111,15 @@ const showFilter = ref(false)
 
 const openDropdown = ref<string | null>(null)
 
+
+const emit = defineEmits(['apply'])
+
+const applyFilters = () => {
+    // Emit a copy of the selected filters
+    emit('apply', { ...selectedFilters }) 
+    // Close the dropdown
+    showFilter.value = false 
+}
 const filters = [
     'Report',
     'Document',
@@ -148,9 +157,7 @@ const filterOptions: Record<string, string[]> = {
     ],
 
     Region: [
-        'Annual Procurement Plan or Procurement List (APP)',
-        'Bid Results on Civil Works, Goods and Services, and Consulting Services (BRCWGS)',
-        'Supplemental Procurement Plan (SPP)'
+        'Region VII - Central Visayas'
     ],
 
     Province: [
