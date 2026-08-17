@@ -19,7 +19,10 @@
             Where is the data from?
           </h1>
           <p class="text-sky-200 mt-3 text-sm max-w-lg text-right leading-relaxed">
-            Ryan do this pls
+            All data is consolidated from the Full Disclure Property Portal 
+            <a href ="https://fdpp.dilg.gov.ph" target ="_blank" class="text-cyan-gr-start underline font-bold">(FDPP)</a> 
+            established by the Department of the Interior and Local Government 
+            <a href ="https://www.dilg.gov.ph" target ="_blank" class="text-cyan-gr-start underline font-bold">(DILG)</a>.
           </p>
         </section>
 
